@@ -1,0 +1,169 @@
+\documentclass[conference,compsoc]{IEEEtran}
+
+% *** CITATION PACKAGES ***
+%
+\usepackage[numbers]{natbib}
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={blue!80!black}
+}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\newcommand{\seo}[1]{\textcolor{red}{SP:~~#1}}
+
+\begin{document}
+
+\title{Project proposal R0a}
+
+\author{
+\IEEEauthorblockN{Mansi Saxena}
+\IEEEauthorblockA{msaxena4@ncsu.edu}
+\and
+\IEEEauthorblockN{Seoyeong Park}
+\IEEEauthorblockA{spark43@ncsu.edu}}
+
+% make the title area
+\maketitle
+
+
+% \begin{abstract}
+% The abstract goes here.
+% \end{abstract}
+
+
+%----------rubric-------------%
+% What problem are you addressing? (200–400 words)
+% Problem description
+% One or two example scenarios.
+% State one or two scientific hypotheses
+% Why is this problem important? (50 words)
+% How will you address this problem? (50–300 words)
+% Just an outline is fine
+% What are some alternatives and how do you justify your approach? (200 words)
+% Key justifications
+% How will you evaluate your approach? (50 words)
+% Optional: brief thoughts, if any
+
+
+
+\maketitle
+\section{Idea 1}
+\subsection{Problem Description}
+Understanding and diagnosing human mental states are crucial aspects of developing intelligent systems in  mental health. Despite ongoing research efforts, AI systems often lack direct access to human mental states. Leveraging Natural Language Processing (NLP) for analysing individuals' mental states offers numerous advantages across various fields.
+
+People frequently communicate their emotions subtly through expressions and phrases, often without explicitly naming their feelings. This implies that emotions can be subtly woven into the fabric of their communication. For instance, individuals might opt for words or expressions outside their usual vocabulary when going through emotional or situational shifts.
+
+This research project's central focus is exploring the connection between an individual's mental state and their writing style on conversational social media platforms. It aims to uncover whether shifts in emotional well-being manifest as discernible changes in the content, tone, or style of their online posts, thereby shedding light on the connection between emotional fluctuations and writing style adjustments in online communication.
+
+To address the intricate nature of this relationship, our goal is to construct a Non-Deterministic Finite State Automata (NFA) that captures the complex interplay between mental states and writing styles. This acknowledges that writing styles may not fit into a simple binary classification but can instead indicate a spectrum of mental states, reflecting the nuanced nature of human expression.
+
+\subsection{Example scenarios}
+\subsubsection{Scenario 1}
+A user of a conversational social media platform experiences a sudden increase in stress levels due to work-related issues. They normally post about their daily routines and interests. However, during this stressful period, they begin to use more negative language and expressions in their posts.
+
+\subsubsection{Scenario 2}
+An individual who frequently posts on a social media platform about their passion for a particular hobby suddenly goes through a personal loss. They continue to post about their hobby but notice a subtle change in the tone and enthusiasm of their posts.
+
+\subsection{Hypotheses}
+\subsubsection{Hypothesis 1}
+Changes in writing style, such as an increase in negative language and expressions, will be observed during periods of heightened stress, reflecting shifts in the user's mental state.
+
+\subsubsection{Hypothesis 2}
+Individuals experiencing emotional changes, such as grief, may exhibit subtle alterations in their writing style, such as a decrease in enthusiasm and engagement with their hobby-related content.
+
+\subsection{Problem importance}
+The importance of this research lies in bridging the gap between human emotions and AI understanding. It enables the development of AI systems that can detect emotional fluctuations, potentially revolutionising fields like mental health support and human-computer interaction, ultimately enhancing our ability to assist and interact with individuals in an empathetic and responsive manner.
+
+\subsection{How will we address this problem?}
+We begin by collecting labelled data from Reddit threads associated with various mental health disorders, such as r/sadness, r/anxiety, and r/boredom \citep{Kim+20:DL-mental-illness}. We also gather user profiles for each post to enhance our NFA \citep{Pourkeyvan+23:mental-disorders-social-networks}, creating a dataset that represents distinct mental states.
+
+Our initial data preprocessing involves clustering posts within each mental health category. We analyse common words, hashtags, and relevant factors to extract unique writing style features for each category, which will inform our NFA.
+
+To bridge the gap between writing styles and mental states, we employ pre-trained language models like MentalBERT and MentalRoBERTa \citep{Ji+21:MentalBERT}, fine-tuned on our Reddit dataset. This enables the development of a classification model that discerns the nuanced relationship between writing styles and mental states.
+
+Constructing the NFA is a multi-step process. We assign emotional states based on Reddit threads (e.g., sadness, anxiety) and define transition rules to reflect state changes based on the unique writing style features identified for each category. We also explore probabilistic transitions since mental states are often not deterministic and can change gradually. The Reddit dataset is then split into Training, Validation, and Testing sets for model training and optimization.
+
+The resulting NFA holds potential in diverse fields, such as mental health support and content recommendations, deepening our understanding of these connections. Future enhancements include distinguishing between temporary emotional fluctuations and potential mental health issues and incorporating multimodal data, like social media images and wearable device logs, to assess correlations with mental instability.
+
+\subsection{Justification}
+Some alternatives to our proposed approach for modelling the relationship between writing styles and mental states include sentiment analysis, topic modelling, and the use of sequential models. Sentiment analysis classifies posts based on the emotions expressed in the text, providing a broad understanding of emotional content. However, it often lacks the granularity to capture subtle shifts. Topic modelling identifies topics within the text but may not capture subtle nuances in the context associated with mental states. Sequential models may offer better performance; however, these models may require substantial amounts of data and computing resources.
+
+By curating labelled data from specific Reddit threads related to mental health disorders, we ensure a direct connection to mental states of interest. Moreover, our idea introduces a novel approach by adopting NFAs to derive connections between writing style changes and mental states. To the best of our knowledge, there is a lack of attempts with this approach in the context of mental state prediction. We believe that NFAs can better capture subtle changes in writing style associated with different mental states, potentially improving accuracy and reliability compared to existing methods. 
+
+\subsection{Evaluation}
+To evaluate our classification models, we will employ evaluation metrics like accuracy, F1 score, and AUC-ROC. We will conduct K-fold cross-validation on our dataset, ensuring robustness. Additionally, to evaluate the NFA, we will perform qualitative analysis, such as examining the automaton's ability to capture subtle writing style changes to provide a holistic evaluation.
+
+\section{Idea 2}
+\subsection{Problem Description}
+In today's digital era, online social platforms have emerged as crucial avenues for communication and self-expression, enabling users to express their thoughts and emotions openly. Recognizing the importance of these platforms as spaces for emotional sharing underscores the need to effectively comprehend and address users' mental states. Traditional textual analysis tools fall short in capturing subtle shifts in emotional well-being, necessitating innovative solutions. 
+
+Our approach entails applying a NFA built in `Idea 1' to model the intricate nexus between writing styles and mental states. This NFA will enable a profound understanding of users' mental states as manifested in their written communication, and can be deployed to real-time platforms like TalkLife. Additionally, we plan to develop an AI model that leverages insights from the NFA, the user's text, and human responders text input to suggest empathetic responses. This enhanced capacity to recognize emotional state shifts in writing styles can lead to more timely and compassionate interventions, potentially providing invaluable mental health support to online community members. Our innovative approach holds significant promise in enhancing the mental well-being of individuals within the digital community.
+
+\subsection{Example scenarios}
+\subsubsection{Scenario 1}
+On TalkLife, Alex expresses academic-induced anxiety. The NFA identifies heightened stress in Alex's writing style and informs the AI model. The AI model, considering input from a human supporter, suggests a response tailored to Alex's emotional state, blending empathy, understanding, and coping strategies.
+
+\subsubsection{Scenario 2}
+In a Reddit mental health support group, Sarah discusses her battle with depression and isolation. The NFA detects an emotional shift in her writing style, indicating increased distress. Powered by the NFA's insights, our model assists a human responder in crafting a response that acknowledges Sarah's emotional state while offering resources and encouragement to seek professional help. This showcases the system's ability to provide timely and compassionate interventions.
+
+\subsection{Hypotheses}
+\subsubsection{Hypothesis 1}
+Integrating the NFA into our AI model's decision-making process will significantly boost its real-time recognition and response to users' emotional state shifts. This enhancement will lead to more timely and empathetic interventions, positively elevating the quality of mental health support on online social platforms.
+
+\subsubsection{Hypothesis 2}
+Through an analysis of user text and NFA-derived insights, the AI model will not only detect emotional state shifts but also customise suggested responses to match users' specific emotional needs. This customization will foster more effective and empathetic human interactions, nurturing emotional support and potentially enhancing users' mental well-being within online social communities.
+
+\subsection{Problem importance}
+In today's digital age, where online platforms are central for self-expression, understanding and responding to users' mental states are vital. Our NFA-based approach enhances online interactions by recognizing mental state shifts in writing styles, offering timely support, and fostering better well-being in the digital community.
+
+\subsection{How will we address this problem?}
+We plan to fine-tune a pre-trained model for our task. In this case, MentalBERT along with MentalRoberta \citep{Ji+21:MentalBERT}, which are a variant of the popular BERT model fine-tuned for mental health-related tasks, are good choices
+
+We fine tune these models on a diverse and extensive dataset that includes user interactions from online platforms that includes a wide range of emotional expressions and associated responses. This dataset should be labelled with emotional states and appropriate responses.
+
+To make the model empathetic, we may incorporate empathetic response generation techniques like training the model with additional empathetic response data or reinforcement learning.
+
+Finally, we integrate the NFA insights into the fine-tuned model. When a user's text is processed, combine the emotional cues identified by the NFA with the model's predictions. Use this combined information to customise the response generation process to match the user's specific emotional needs.
+
+As a future plan, we want to integrate our NFA and AI model with real-time human-to-human interaction platforms like TalkLife. This may involve developing plugins or APIs that work seamlessly with these platforms.
+
+\subsection{Justification}
+While there are alternatives in the field of AI-driven emotional support and empathetic conversation, our approach stands out for several key reasons. First, as demonstrated by \citet{Sharma+23:human-ai-empathic-conversation}, existing systems often provide corrections to human responses for empathy but may not always adapt well to specific situations. In contrast, our approach goes beyond correction and directly targets mental health support, which is a critical and sensitive domain where empathy is paramount. By integrating NFA-derived insights into the model, our system gains a deeper understanding of users' emotional states, enabling it to offer more contextually relevant and effective responses.
+
+Additionally, our approach has the potential for broader applications beyond mental health support. While \citet{Sharma+20:empathy-mental-health} focus primarily on empathy correction, our model can be extended to address a wide range of emotions and emotional states, making it applicable to various scenarios beyond mental health. This versatility ensures that our system can cater to a more extensive spectrum of emotional needs, providing support and assistance across different contexts.
+
+\subsection{Evaluation}
+We will evaluate the fine-tuned MentalBERT model's performance using appropriate metrics, including accuracy in emotional state recognition and the quality of generated empathetic responses. The primary goal is to measure empathy from generated texts. To do this, we may use pre-labeled text-based empathy dataset and trained models to evaluate \citep{Sharma+20:empathy-mental-health}. The dataset has already been rated for the level of empathy from 0 to 6. In addition to automated model-based tests, human evaluation may be involved if necessary. 
+
+\section{Thoughts}
+We might consider developing our idea into a publication instead of letting it remain solely as a course project.
+
+
+
+
+
+\bibliographystyle{IEEEtranN}
+\bibliography{Seoyeong}
+
+
+
+
+\end{document}
+
+

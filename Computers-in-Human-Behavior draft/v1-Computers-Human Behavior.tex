@@ -1,0 +1,702 @@
+% \documentclass[a4paper,fleqn,longmktitle]{cas-dc}
+% \documentclass[a4paper,fleqn]{cas-dc}
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{url}
+\urlstyle{same}
+
+%\usepackage[authoryear,longnamesfirst]{natbib}
+%\usepackage[authoryear]{natbib}
+\usepackage[sort]{natbib}
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage{lineno}
+\usepackage{xcolor}
+\usepackage{cite}
+\usepackage{xcolor}
+\usepackage{graphicx}  
+\usepackage{longtable}
+ 
+
+\newcommand{\ms}[1]{\textcolor{red}{{MS:~~#1}}}
+\newcommand{\vg}[1]{\textcolor{green!50!black}{{VG:~~#1}}}
+\newcommand{\br}[1]{\textcolor{red!50!yellow!80!}{{BR:~~#1}}}
+\newcommand{\mps}[1]{\textcolor{blue!80!}{{MPS:~~#1}}}
+\newcommand{\am}[1]{\textcolor{red!80!black!40}{{AM:~~#1}}}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+\title{Analyzing impact of Violence-related Traumatic Experiences on Narrative Structures of Victims for Support Seeking} \date{}
+
+% \title [mode = title]{Analyzing Violence-Related Posts to Gain Supportive Responses}     
+
+\author{Mansi Saxena}
+
+% Author and affiliations section
+% \author[1]{Mansi Saxena}
+% \ead{msaxena4@ncsu.edu}
+
+% \author[2]{Vaibhav Garg}
+% \ead{vaibhavg@vt.edu}
+
+% \author[3]{Bhaskar Ray}
+% \ead{bray4@ncsu.edu}
+
+% \author[4]{Aura Mishra}
+% \ead{aura_mishra@ncsu.edu}
+
+% \author[1]{Munindar P. Singh}
+% \ead{mpsingh@ncsu.edu}
+
+% \affiliation[1]{organization={North Carolina State University, Department of Computer Science},
+%                  addressline={College of Engineering}, 
+%                  city={Raleigh}, postcode={27606}, state={NC}, country={United States}}
+
+% \affiliation[2]{Virginia Tech}
+
+% \affiliation[3]{organization={North Carolina State University, Department of Statistics},
+%                  addressline={College of Sciences}, 
+%                  city={Raleigh}, postcode={27606}, state={NC}, country={United States}}
+
+% \affiliation[4]{organization={North Carolina State University, Department of Psychology Faculty: Lifespan Developmental Psychology},
+%                  addressline={College of Humanities and Social Sciences}, 
+%                  city={Raleigh}, postcode={27606}, state={NC}, country={United States}}
+
+\maketitle
+
+\begin{abstract}
+\textit{Warning: This paper contains descriptions and discussions of intimate partner violence, domestic violence, and sexual violence, which may be triggering to some individuals. }
+
+\ms{Start the abstract with why people use Reddit, like the first paragraph of Intro}
+\vg{Say why do people use Reddit?}
+Analysing the linguistic and content-based aspects that makes a Reddit\vg{Reddit story is very generic...say violence story...violence experience seems better} story, i.e., a Reddit post\vg{either use story or post throughout the paper}, gain emotional support from the community\vg{which community?}. Emotional support\vg{Is emotional support a legit term for \# of responses?} is defined\vg{who defined it?} as the ``total number of comments on a Reddit post, not by the author of the post\vg{not by the author here seems confusing}''. principal results: \ms{Add}. major conclusions: \ms{Add}
+
+\end{abstract}
+
+% \begin{graphicalabstract}
+% % \includegraphics{figs/cas-grabs.pdf}
+% \end{graphicalabstract}
+
+% \begin{highlights}
+% \item Research highlights item 1
+% \item Research highlights item 2
+% \item Research highlights item 3
+% \end{highlights}
+
+% \begin{keywords}
+% Reddit \sep Domestic Violence \sep Sexual Violence \sep MeToo
+% \end{keywords}
+
+\section{Introduction}
+
+% \am{These papers can be helpful to write a brief overview but this is IPV specific: }
+%     \begin{itemize} 
+%     \item \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC9233205/#bib80}
+%     \item \am{This is more general and covers a lot and should be helpful with framing:} \url{https://www.journals.uchicago.edu/doi/pdf/10.1086/727029?casa_token=0l2auZuzF_gAAAAA:ybqFLiGv5zEY4ll-FlAlil_UULBjNjDW4KAsgAgsa9C_1Q211iQi2eLIP38rQ1kWaoSH0-d0ukg}
+% \end{itemize}
+
+\am{I wonder if you should connect the background with the theory, identify gaps and then move to this part? Or integrate this with theory --> The flow of the introduction need to be improved (especially for a publication)} 
+\ms{Due to changing the flow to this, I am not sure how to break the Introduction and Theory section into 2 parts in a natural manner, without being repetitive - the reason for such a long Introduction}
+
+Victimization, particularly in the contexts of intimate partner violence (IPV), domestic violence, and sexual victimization, represents a significant violation of personal autonomy and safety. 
+IPV and domestic violence are characterized by patterns of abusive behavior within intimate relationships, encompassing physical, emotional, psychological, and economic harm inflicted by a partner or family member. 
+Sexual victimization on the other hand involves non-consensual sexual acts or coercion and often occurs in tandem with other forms of abuse, further compounding the harm experienced by victims. 
+
+\subsection{Impact of Violence on the Victim}
+
+These forms of violence are pervasive and systemic, affecting individuals across all demographics and societal contexts.
+The impact of victimization extends far beyond immediate harm, negatively influencing the survivors' psychological well-being, physical health, and socio-economic stability. 
+Psychosocial processes, such as feelings of shame, guilt, and mistrust, disrupt survivors' sense of identity and agency, posing challenges to recovery. 
+Victimization also follows identifiable stages, particularly in IPV, where the cycle of violence often begins with tension-building, progresses to acute incidents of abuse, and culminates in a temporary reconciliation or ``honeymoon'' phase. 
+This cyclical pattern not only intensifies over time but also complicates victims' ability to leave abusive environments. 
+These forms of violence are deeply rooted in power imbalances and are often characterized by manipulation, coercion, and control, leading to significant long-term effects on the survivor's health, mental state, and overall quality of life.
+
+The long-term consequences of IPV, domestic violence, and sexual assault are pervasive. 
+Existing literature has highlighted the significant psychological, emotional, and social consequences of intimate partner violence (IPV), domestic violence, and sexual victimization, including mental health issues like depression, PTSD, and anxiety.
+Physical health issues, from chronic pain to reproductive health complications, are common, while the socio-economic effects can be devastating, including job loss, financial instability, and the need to relocate for safety. 
+The broader social repercussions can perpetuate cycles of abuse across generations, sustaining harmful dynamics within families and communities.
+
+\subsection{Narrative Theory and Social Support Theory}
+Narrative Theory offeres valuable insights into how individuals reconstruct and communicate their experiences.
+According to Narrative Theory, telling one's story is a critical mechanism for making sense of traumatic events, reshaping identity, and restoring a sense of control, thus emphasizing the role of storytelling in processing trauma and reclaiming agency.
+Research has shown that crafting a coherent narrative of trauma or hardship allows abuse survivors to process and articulate their emotions, reflect on their experiences, assert control over their story, and seek validation from their audience. 
+This process not only helps individuals cope with their challenges by  fosters resilience and enabling them to reclaim their sense of self-worth, but also helps fosters a sense of belonging by connecting them with others who have similar experiences.
+
+The narrative process, however, does not occur in isolation. 
+It is often intertwined with Social Support Theory \citep{vaux1988social, house1987social}, which emphasizes the importance of emotional, informational, and practical support from others in mitigating the effects of stress and promoting psychological well-being \citep{cohen1985stress}. 
+Survivors are more likely to overcome trauma when they have access to a network of supportive relationships, whether family, friends, or formal support systems like shelters and counseling services, thus receiving various forms of support including but not limited to validation.
+
+Social support is not only vital for mental health but also plays a critical role in helping individuals navigate trauma and adversity. 
+Research has shown that even the belief or perception that emotional support is available has a stronger influence on mental health outcomes than the actual provision of support itself. \citep{dunkel1990determinants, wethington1986perceived}.  
+
+\subsection{The role of Online Support Communities in fostering Resilience}
+
+Despite growing awareness, the stigma surrounding intimate partner violence (IPV), domestic violence, and sexual victimization frequently silences victims, hindering their ability to speak out, share their experiences, or leave abusive situations.
+Fear of judgment, shame, and the potential for retribution can make it difficult for victims to reach out for support, thus delaying or impeding their recovery process. 
+This silencing effect is compounded by emotional ties and fear of consequences—such as losing custody of children, financial stability, or facing retaliation—that make leaving an abusive relationship seem insurmountable. 
+Victims may feel trapped in isolation, unable to seek help or express their pain openly, which can hinder the development of resilience.
+
+This is where Computer Mediated Communication (CMC) \citep{walther2011theories}  comes into play.
+CMC theory explains how digital spaces allow individuals to communicate without the constraints of physical presence, often fostering more openness, vulnerability and emotional expression.
+By enabling victims to connect with others who understand their struggles, CMC reduces isolation and facilitates the formation of supportive communities.
+Online platforms, such as Reddit, offer a unique opportunity for victims to seek support and validation in a relatively safe, judgment-free environment.
+These platforms provide a space for victims to share their experiences, seek advice, and receive support \citep{goffman1963embarrassment}, bypassing the stigma and judgment that might be encountered in face-to-face interactions.
+Reddit's anonymity and diverse communities make it an essential space for understanding how victims narrate their experiences and how communities respond, fostering resilience by offering emotional validation and practical support in the face of trauma \citep{proferes2021studying}.
+Furthermore, CMC enables individuals to access a wider range of support networks, reaching people with similar experiences across geographical and social boundaries. 
+
+\subsection{Research Gap}
+
+\ms{Revisit}
+
+Despite the growing recognition of the challenges faced by survivors of IPV, domestic violence, and sexual assault, significant gaps remain in understanding how the violence experienced and the journey of trauma recovery influence the structure and content of survivors' narratives, particularly in online spaces. 
+Existing research has primarily focused on small groups of individuals using face-to-face interviews or questionnaires, where anonymity is not guaranteed. These methods often limit the candidness of survivors' accounts, as the fear of stigma, judgment, or retraumatization may inhibit open sharing. 
+Additionally, such studies tend to focus on survivors reflecting on their experiences retrospectively, missing the nuances of how victims articulate their lived realities during the immediate aftermath of trauma.
+
+Furthermore, while the therapeutic benefits of storytelling have been explored, there is limited research on how specific elements of survivors' narratives—such as expressions of self-blame, coping strategies, or the portrayal of the abuser—are shaped by the severity and nature of violence experienced. 
+Few studies address how these narrative features influence the type and degree of support survivors seek or receive, particularly within the context of anonymous online platforms.
+As a result, the connection between narrative structure and the social support available to survivors in digital spaces remains underexplored.
+
+Understanding these dynamics is crucial, especially as online platforms provide victims with a space to share their stories in real-time, reflecting their immediate experiences and needs. 
+By maintaining anonymity, these platforms allow survivors to be more candid, bypassing the inhibitions often present in traditional research settings. 
+Moreover, analyzing narratives from a larger and more diverse group of survivors offers an unparalleled opportunity to understand the complex interplay between trauma, narrative construction, and the pursuit of support.
+This study aims to fill this gap by exploring the narratives of survivors on Reddit, and how these narratives shape the support they receive, ultimately identifying key narrative features that foster resilience and increase the likelihood of receiving meaningful support in online communities. 
+
+\textcolor{blue}{Technical challenges we must overcome to make the approach a reality.} \ms{To be added}
+
+\begin{itemize}
+    \item Collecting data - ban on Reddit API - collected archived data
+    \item Filtering the data to only retrieve relevant rows - manually
+    \item Discrepancy between average number of comments on each subreddit; some subreddits have a large number of posts with 0 zero comments - employed a ZIP model
+    \item Evaluating LLM outputs - manually
+    \item Difficulty in finding age of the victims
+    \ms{Add references as to why age doesn't work well, and also visualisations}
+    \item Manual Annotations - for Mental Health and Social Consequences - difficult to annotate without a proper diagnosis
+    \item \url{https://aclanthology.org/2023.rocling-1.22.pdf} \url{https://arxiv.org/pdf/2406.18321v1}
+\end{itemize}
+    
+\textcolor{blue}{How the contribution will be (or has been) evaluated: could involve establishing key theoretical results or simulations or measurements from practical deployments (hard).} 
+
+\br{Add about Zero-inflated poisson model, hypothesis testing} 
+
+\textcolor{blue}{Results: a crisp statement of your takeaways.} \ms{To be added after hypothesis testing}
+
+% \section{Theory}
+
+% In the context of survivors sharing their experiences in online environments, understanding the dynamics of emotional support, storytelling, and resilience is crucial. \am{because? (you need a sentence or two to summarize all the details you have included below).} 
+% Recent research has increasingly explored how individuals use computer-mediated communication (CMC) platforms to process trauma, seek validation, and build resilience. 
+% This research is grounded by several foundational theories, such as Social Support Theory, Narrative Theory and Resilience Theory, that provide a comprehensive framework for understanding the experiences of abuse survivors in online spaces, particularly in the context of social support-seeking behaviors. 
+% Each theory offers a distinct, yet complementary perspective on how survivors of violence and abuse seek support and narrate their experiences in digital communities. 
+
+
+
+\subsection{Resilience and the Power of Online Narratives} 
+
+Resilience Theory emphasizes the ability of individuals to recover from adversity.
+It suggests that resilience is not merely the ability to ``bounce back'' but involves positive growth through adversity, shaped by both internal and external resources \ms{Add citations}
+% (Rutter, 2013). 
+\am{Don't forget to cite Ann Masten: \url{https://pubmed.ncbi.nlm.nih.gov/11315249/}}
+
+In this context, narratives of resilience highlight the ways in which survivors of abuse cope with and overcome their traumatic experiences. 
+The framing of these narratives can reflect both the victim's struggle and their eventual empowerment, often catalyzed by support from others. 
+Resilience, therefore, is not only about surviving but also about reclaiming agency and moving forward despite the hardships experienced. 
+\am{Social support can promote resilience} 
+
+Supportive comments from online community members play a key role in this process. 
+They help alleviate feelings of isolation, loneliness, or distress—emotions commonly experienced by survivors of abuse—by creating a sense of solidarity and understanding. 
+These interactions provide not only emotional validation but also practical advice and encouragement, enabling survivors to reframe their experiences and strengthen their capacity to cope with trauma. 
+By fostering a supportive and empathetic environment, online communities enable survivors to build resilience and move toward recovery \citep{pendry2015individual}.
+Studies have shown that individuals who engage in narrative-based meaning-making tend to report higher levels of resilience and psychological well-being. 
+Moreover, resilience is enhanced when individuals observe others who have successfully overcome similar challenges, which is a common feature of online communities where survivors share their recovery journeys.
+
+
+\section{Research Focus}
+
+\ms{From Introduction}
+
+This study focuses on four specific subreddits —\texttt{r/domesticviolence}, \texttt{r/metoo}, \texttt{r/sexualassault}, and \texttt{r/SexualHarassment} — which provide platforms for individuals to share experiences of abuse and seek support.  
+Responses to these posts often include supportive messages, practical advice, or discussions that validate the poster's experiences.
+
+Reddit's structure makes it particularly suited for such sensitive discussions. 
+Subreddits are moderated by community volunteers who ensure compliance with site rules, such as prohibiting doxing—revealing users' identities based on their posts—and promoting respectful interactions. 
+For subreddits addressing delicate topics like abuse and mental health, moderators also provide access to local help hotlines in cases where life-threatening situations are described.
+
+Unlike platforms such as Twitter, Reddit supports longer, more detailed submissions, which often adhere to standard English. 
+This makes Reddit posts more amenable to NLP techniques, such as semantic role labeling, which require structured text. 
+These features make Reddit an ideal platform for analyzing sensitive topics.
+
+In this study, we examine posts from these subreddits to explore how victims construct their narratives. We identify linguistic and contextual elements that drive reader engagement. By analyzing these narratives, we aim to understand the factors that encourage supportive responses, providing insights into how victims' story, their struggle and narrative of resilience resonate with online audiences.
+
+Our approach centers on the contextual features of these posts, including the victim's relationship with the abuser, the narrative structure, encompassing aspects such as setting, characterization, and plot, along with impacts of violence on the victim such as behavioral, mental health, social, and economic. 
+This analysis aims to provide an insight into how victims seek social support through their posts and the narrative strategies they employ to elicit such responses.
+We also focus on the relationship between narrative structures and the type and degree of violence experienced by the victim. 
+
+Thus, by examining such key elements such as the portrayal of the abuser, the victim's coping mechanisms, and the resolution or ongoing challenges in the narrative, we will explore how different forms of violence—whether physical, emotional, or sexual—are linked to specific storytelling approaches. 
+Additionally, we will investigate how these narrative elements relate to the impacts of the violence on the victim, including physical, mental, behavioral and social-economic consequences.
+
+While linguistic features (such as post length, emotion and sentiment) are also explored, they are secondary to understanding the deeper connection between narrative structure, the support-seeking process, and the victim's experience of violence. 
+
+
+
+% ========================================
+
+This study aims to investigate the contextual and structural features of narratives shared by survivors of abuse in online communities and their relationship with reader engagement, measured through the number of supportive comments. 
+Building on the theoretical foundation of Narrative Theory, Social Support Theory, and Resilience Theory, this study examines how these features interact to shape the dynamics of storytelling, social support, and resilience in digital spaces.
+
+Contextual features such as the relationship between the survivor and the perpetrator, as well as the specific mental health, social, economic, behavioral and physical impacts of violence described in the narrative, provide critical insights into the lived experiences of survivors. \am{You need more here and within the context of your theoretical approaches. This should appear earlier in the introduction} 
+Structural features, including the organization of the narrative (setting, characterization, plot, and intention), the presence of elements like emotional tone, or explicit calls for support, highlight how survivors craft their stories for connection and validation. 
+
+\am{This should be highlighted better in the theories above. (1) Introduction to the problem. (2) Contextual factors/outcomes. (3) Theory and integrating them with the contextual features but highlight structural features that promote well-being }
+
+
+\am{Not entirely clear why the research questions need to be addresses. Integrating what is know and what is lacking throughout the introduction will be helpful }
+
+\begin{enumerate}
+    \item \textbf{Research Question 1:} How does the narrative structure of the Reddit post (including the setting, characterization and plot) interact with contextual features such as the impact of violence on the victim and the relationship between the victim and perpetrator?
+    \item \textbf{Research Question 2:} What contextual and structural features of survivor narratives are most associated with higher reader engagement? \ms{link it with Social Support theory}
+\end{enumerate}
+
+By analyzing patterns in narrative construction and audience responses, this research contributes to a deeper understanding of how survivors navigate trauma and resilience in computer-mediated communication (CMC). 
+It seeks to contribute to a deeper understanding of the complex interplay between language, context, resilience, and user engagement in digital spaces in the context of trauma and support-seeking behavior.
+The findings aim to provide actionable insights for improving the design of online platforms to better support survivors, enhance social connectivity, and promote resilience through storytelling.
+
+\subsection{Contextual Features}
+
+Contextual features are narratives shared by survivors of abuse pertain to the situational factors surrounding the Reddit post. 
+They provide crucial insights into the lived experiences of trauma and its impact on individuals. 
+These features capture the broader circumstances and relationships surrounding the survivor's story, offering a nuanced understanding of the context in which violence occurs and the survivor's response to it.
+We study the following key contextual features described below.
+\ms{Revisit}
+
+\subsection{Structural Features}
+
+Narrative structures provide an organizational framework for conveying events, emotions, and intentions in a coherent and impactful manner. 
+
+Grounded in Narrative Theory, Key components of narrative structures of resilience include the Setting, Characterization, Plot, Theme and Fictional Goal, as defined in \citep{neimeyer2001coping}.  
+
+In our study, we adapt this framework by focusing on three key components: 
+Setting, which establishes the context by describing time, place, or circumstances; 
+Characterization, which portrays the roles, traits, and relationships of individuals involved;
+and Plot, which outlines the sequence of events, including triggers, actions, and resolutions. 
+We also introduce an additional feature, Intention, to capture the victim’s purpose in sharing their story on Reddit. 
+This modification allows us to better analyze the narrative structure within the context of trauma and resilience in online discourse.
+
+\section{Methodology}
+
+\subsection{Data Collection}
+
+For this study, data from four subreddits was used namely - r/domesticviolence, r/MeToo, r/sexualassault and r/sexualharrassment. Due to the ban on the Reddit PushShift API, Reddit archival data was leveraged to extract posts from the r/domesticviolence subreddit. 
+For the other subreddits, data from \citep{garg2024unveiling} was used. 
+
+\subsection{Data Filtering}
+
+After collecting data from the r/domesticviolence subreddit, the next step was to filter out the posts to only retain those that were written by the victim of a sexual violence or domestic violence incident. 
+For this, we first preprocess the title and text of the posts by removing punctuation, converting to lowercase, remove age and gender tags, and replacing any double spaces with single spaces. 
+To perform data filtering, two linguistic heuristics were adopted, explained below. 
+\begin{itemize}
+    \item The first filtering heuristic checks if the title of the Reddit post contains first person personal pronouns, i.e., me, mine, myself, I. The second filtering heuristic identifies words that appear after the word ``my” in the title and convert them to their base form via lemmatization. 
+    \item Following this, we sort these words in decreasing order of their frequency of occurrence, and manually eliminate irrelevant words. This obtained list of relevant words is then used to filter the posts. If a post contains words that match with the relevant words, it is retained for further analysis. The final list of relevant words used is given in the table \ref{tab:relevant_words} in the appendix.
+\end{itemize}
+
+\ms{Add example phrases of filtering}
+
+After filtering, we are left with 710 relevant rows and 1629 irrelevant rows. 
+This is because many posts were written in the third person point of view, such as from a relative or friend of the victim.
+
+\ms{Add table with examples of posts – both relevant and irrelevant} 
+
+The data for the subreddits r/MeToo, r/sexualassault and r/sexualharrassment was already filtered by the methodology used by \citep{garg2024unveiling}. 
+
+To confirm if the filtered data from all subreddits meets our requirements and is relevant for our study, we randomly sample 50 posts from each subreddit, and obtain an overall weighted accuracy of 91.89\%. The key statistics of the final dataframe, including the number of posts, time ranges, and the accuracy of post filtering, is given in table \ref{tab:data_stats} 
+
+\begin{table*}[ht!]
+\centering
+\renewcommand{\arraystretch}{1.5} %
+{\small 
+\begin{tabular}{l p{1cm} p{3.8cm} p{2.2cm} p{4cm}}
+% \begin{tabular}{|l|c|c|c|c|c|}
+\toprule 
+\textbf{Subreddit} & \textbf{Posts} & \textbf{Time} & \textbf{Relevance of Post (Accuracy)} & \textbf{\# Supportive Comments per Post (Standardized)} \\
+\midrule
+r/domesticviolence & 710 & 2010-12-02 to 2018-10-31 & 90\% & 1.000 \\
+r/MeToo & 850 & 2017-10-17 to 2021-07-17 & 90\% & 0.440 \\
+r/sexualassault & 3665 & 2016-05-17 to 2021-07-17 & 92\% & 0.018 \\
+r/sexualharrassment & 418 & 2016-07-25 to 2021-07-17 & 98\% & 0.000 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Summary of subreddit statistics, including post-filtering relevance accuracy and standardized number of supportive comments per post across the four subreddits focused on sexual and domestic violence.}
+\label{tab:data_stats}
+\end{table*}
+
+\subsection{Comments Filtering:}
+In this study, we define supportive comments as those made by users other than the original poster (OP), the victim, or the individual who created the post. Accordingly, we assume that all comments made by users other than the OP are supportive in nature. This assumption is supported by a manual annotation of 50 randomly sampled comments, which revealed a 97\% relevance rate.
+
+Reddit archive data stores comments separately from posts, with a unique \textit{submission\_id} linking each comment to its corresponding post. Additionally, each post and comment is associated with a \textit{speaker\_id}, which uniquely identifies the Reddit user who made the post or comment.
+To count the number of posts made by users other than the OP, we first retrieve all comments associated with a given post using the \textit{submission\_id}. Next, we compare the \textit{speaker\_id} of each comment with that of the OP. If the \textit{speaker\_id} matches the OP's identifier, the comment is excluded from our analysis. It is important to note that not all posts have a \textit{speaker\_id}, as some comments may have been deleted, a consequence of the raw nature of Reddit’s archived data. Posts with missing or deleted \textit{speaker\_id} entries are excluded when annotating the relevance of comments. In cases where no relevant comments are identified for a post, the count of relevant comments is recorded as zero.
+
+In this manner, we obtain the number of relevant comments per post, as detailed in Table \ref{tab:data_stats}, serving as our metric for measuring the social support received by the victim through comments on their post.
+
+\subsection{Feature Extraction} 
+This study employed a state-of-the-art approach to extract the contextual and structural features from Reddit posts, utilizing LLaMA 3.1 fine-tuned for instruct prompting \citep{dubey2024llama}. 
+
+Use prompt engineering on this model, we extract the narrative structure, encompassing the Setting, Characterization and Plot, Relationship between the Victim and Abuser, and the Impact of Violence by the Victim. These are detailed in the sections below. 
+
+\subsubsection{Extracting Narrative Structure}
+
+The following key components of narrative structure are examined in this study, with most derived from the framework proposed by \citep{neimeyer2001coping}, and one additional feature, ``Intention'', introduced to capture the unique dynamics of online survivor narratives.
+
+\begin{enumerate}
+    \item \textbf{Setting: } 
+    Setting refers to the ``where and when'' of a narrative, encompassing the physical location, time period, and environmental context in which the story unfolds. It provides the backdrop for events, situating readers in the narrator's lived experience. A well-developed setting not only helps readers visualize the environment but also adds depth to the narrative by creating emotional resonance and enhancing empathy. For example, details about the physical location, such as a home or public space, and the timing, such as during a holiday or late at night, can establish a vivid scene that anchors the story and influences how the audience perceives the events.
+    \begin{itemize}
+        \item \textbf{Physical Location:} This refers to the specific physical place where the abuse occurred, such as a home, workplace, public space, private space, or online. 
+        A clear identification of location provides a concrete backdrop that helps readers situate the event within the narrator's lived experience. 
+        For instance, abuse occurring at home might evoke a sense of betrayal or loss of safety, while an incident in a public space could highlight the audacity or visibility of the act.
+        \item \textbf{Environmental Cues:} These are sensory or contextual details about the environment where the abuse took place, such as whether it was isolated, crowded, involved intoxication and so on. 
+        These cues add depth to the narrative, helping readers understand the atmosphere and external factors influencing the event. 
+        For example, an isolated setting might emphasize vulnerability, whereas a crowded one might reflect societal inaction or apathy.
+        \item \textbf{Pattern:} This narrative feature captures whether the violence was a single incident or part of a recurring pattern of abuse. 
+        Recognizing patterns provides insights into the continuity and impact of the abuse, shaping the reader’s understanding of its severity. 
+        For example, ongoing abuse highlights the systemic or habitual nature of violence, while a one-time event may highlights its suddenness or unpredictability.
+    \end{itemize}
+
+    \item \textbf{Characterization: }
+    Characterization introduces the ``who'' in the story. 
+    It depicts the individuals in a story, including the narrator, key figures such as the abuser, and other supporting or antagonistic roles. 
+    It reflects how characters are described, portrayed, and understood within the narrative. 
+    Through characterization, the narrative conveys the dynamics between individuals, offering a richer understanding of the interpersonal relationships that shape the story.
+    \begin{itemize}
+        \item \textbf{Victim's Self-Blame:} This refers to the extent to which the victim internalizes guilt or responsibility for the abuse they have suffered. 
+        It often reflects psychological manipulation by the abuser or societal stigma, leading victims to perceive themselves as the cause of their suffering. 
+        For example, a victim might feel responsible for provoking the abuser or failing to prevent the abuse.
+        \item \textbf{Abuser's Portrayal:} This highlights the character traits or roles attributed to the abuser within the narrative.
+        Descriptions may include aggressiveness, manipulation, or authoritative control, shedding light on the dynamics of the abuse and the relationship between the abuser and victim. 
+        For instance, an abuser portrayed as highly controlling or emotionally abusive emphasizes their power over the victim.
+        \item \textbf{Supportive Figures:} These are individuals or groups who play a positive role in aiding the victim, such as friends, family members, or law enforcement. 
+        Their involvement can provide emotional, physical, or legal support, contributing to the victim's recovery or ability to escape the abusive situation.
+        \item \textbf{Antagonistic Figures:} These are individuals or groups who hinder the victim's ability to end the abuse, either intentionally or unintentionally. 
+        They may include family members dismissing the victim's experience or societal figures perpetuating stigma. 
+        Their actions often exacerbate the victim's challenges or reinforce the abusive dynamic.
+    \end{itemize}
+
+    \item \textbf{Plot: } 
+    This narrative element captures the ``what'' of the story, detailing the sequence of events that describe the survivor's challenges, coping mechanisms, and moments of resilience. 
+    A coherent and compelling plot draws readers into the story, inviting them to emotionally engage with the survivor's journey, causing them to feel empathetic towards the victim's situation. 
+    This structure often includes a triggering event, actions taken to confront or escape adversity, and reflections on the outcomes, which collectively enhance reader connection and support.
+    \begin{itemize}
+        \item \textbf{Main Event:} This refers to the central incident or series of incidents that define the narrative's core conflict, often detailing the type and degree of violence or abuse experienced. Examples include physical harm, emotional manipulation, or financial control. Highlighting this element provides clarity about the victim's primary adversity.
+        \item \textbf{Coping Actions:} These are the steps or strategies taken by the victim to confront, escape, or manage the abusive situation. Examples include seeking support, leaving the abuser, or finding internal resilience. This element showcases the victim's agency and efforts to reclaim control.
+        \item \textbf{Challenges Faced:} These are the barriers or difficulties encountered by the victim while navigating the abusive experience or pursuing recovery. Examples include financial instability, custody battles, or societal stigma. Highlighting these challenges offers insight into the complexity of the survivor’s journey.
+    \end{itemize}
+    \item \textbf{Intention: } 
+    The intention of the author refers to the underlying purpose or motivation behind why they choose to share their story or experiences online. 
+    It reflects what the author hopes to achieve, express, or communicate to others through their post. 
+    Examples include seeking support, offering advice, raising awareness, processing trauma or emotions, gaining clarification on a potential abusive situation, and so on. 
+    The clarity and alignment of an author's intention with their narrative can significantly influence how readers perceive and engage with the post. Intentionality often directs the narrative tone and structure, shaping reader responses and fostering targeted interactions, such as empathy or practical support.
+\end{enumerate}
+
+The prompts used for the above features is given in the appendix, in table \ref{tab:narrative_structure}.
+Essentially, we use the Llama 3 8B Instruct Model to generate the outputs to these features
+Since this is an open-ended generation task we leverage contrastive search, proposed by \citep{su2022contrastive}, as our text generation strategy. This was chosen over alternative decoding methods, such as greedy or beam search, because of its ability to generate non-repetitive yet coherent outputs. 
+This decoding strategy optimally balances coherence and creativity, producing outputs that are both meaningful and contextually appropriate. 
+By prioritizing diversity within the constraints of coherence, this method effectively captured the complexity and depth of survivor narratives.
+It is controlled through two key parameters. \ms{Revisit definitions}
+
+\begin{enumerate}
+    \item \textbf{Penalty\_alpha:} This parameter balances diversity and coherence in text generation by penalizing overused patterns. It is set to 0.6.
+    \item \textbf{Top\_k:} This parameter restricts the search space to the top-most likely tokens at each generation step, enhancing output quality. We set this to 4. 
+\end{enumerate}
+
+The chosen configuration ensures that the generated outputs captured the complexity and subtlety of survivor narratives without introducing repetitive or irrelevant content.
+
+
+\subsubsection{Extracting Relationship between the Victim and Perpetrator}
+
+The nature of the relationship between the survivor and the perpetrator, which could range from intimate partners to family members, acquaintances, or strangers. 
+Additionally, the gender of the victim and the perpetrator is examined, as gender dynamics can significantly influence both the narrative construction and audience perception of the story. 
+These factors shape the survivor's narrative and influence the type and extent of support they seek.
+
+\subsubsection{Extracting Impact of Violence on the Victim}
+
+The specific mental health, physical health, social, economic, and behavioral consequences of violence experienced by the survivor. 
+These impacts reflect the depth of trauma and underscore the survivor's immediate and long-term needs.
+By analyzing which types of impacts generate the most comments, we aim to understand how descriptions of the consequences of abuse affect reader empathy levels and shape narrative structures.
+\begin{enumerate}
+    \item \textbf{Mental Health Impacts:} 
+    \begin{itemize}
+        \item \textbf{PTSD:} Severe anxiety, flashbacks, nightmares, and hypervigilance are common symptoms of post-traumatic stress disorder (PTSD) experienced by survivors. 
+        These symptoms can disrupt daily life, making it difficult to feel safe or engage in normal activities. 
+        \item \textbf{Depression:} Survivors often experience persistent feelings of sadness, hopelessness, and a lack of motivation, which can lead to withdrawal from social interactions and a loss of interest in previously enjoyed activities. 
+        This emotional state may further exacerbate their isolation.
+        \item \textbf{Anxiety:} Excessive worry, fear, and nervousness can become overwhelming for survivors, causing difficulties in concentrating, sleeping, or making decisions. 
+        This heightened sense of alertness often impacts both their mental and physical well-being.
+    \end{itemize}
+    \item \textbf{Physical Health Impacts:}
+    \begin{itemize}
+        \item \textbf{Visible Physical Injuries:} Survivors may suffer from bruises, fractures, scars, wounds, and burns as a result of violent incidents. 
+        These injuries not only cause immediate pain but can also serve as visible reminders of the trauma, impacting self-esteem and mental health.
+    \end{itemize}
+    \item \textbf{Behavioral Consequences:}
+    \begin{itemize}
+        \item \textbf{Self-harming or Suicidal Tendencies:} Overwhelming emotional pain caused by violence or abuse may lead survivors to engage in self-harm or have thoughts of suicide. 
+        These behaviors are often attempts to cope with the trauma or regain a sense of control over their suffering.
+    \end{itemize}
+    \item \textbf{Economic Consequences:} 
+    \begin{itemize}
+        \item \textbf{Financial Instability:} Many survivors face challenges with income loss or increased expenses due to medical bills, legal costs, or disruptions in employment. 
+        This financial strain can prolong their dependence on others or hinder their ability to escape abusive situations.
+        \item \textbf{Legal Barriers:} Survivors may encounter significant challenges when navigating the legal system to seek protection or justice. 
+        These obstacles, such as lack of legal knowledge, high costs, or fear of retaliation, can discourage them from pursuing necessary legal actions.
+    \end{itemize}
+\end{enumerate}
+
+    
+\subsection{Further Exploration}
+
+\subsubsection{Emotions:}
+
+\subsubsection{Sentiment:}
+
+\subsection{Linguistic Features}
+
+In the context of online communication, linguistic features refer to the language and words used in a Reddit post. This encompasses the tone, sentiment, and language use, which collectively create a unique narrative voice. The tone can be formal or informal, serious or humorous, and the sentiment can be positive, negative, or neutral. Language use includes the choice of words, phrases, and literary devices such as metaphors and imagery. These elements combine to create a distinct linguistic profile that influences how readers engage with the post. The linguistic features that we focus on for our study are emotion and sentiment, elaborated below.
+
+\textit{How does the emotion conveyed in Reddit posts correlate with the level of engagement in posts by victims of abuse?} 
+
+This question will investigate whether emotional tones such as anger, fear, or sadness in the text lead to more comments. 
+It explores whether posts that express certain emotions strongly (or weakly) are more likely to provoke reactions, and therefore more engagement, from readers.
+
+\textit{How does the sentiment of a Reddit post correlate with the level of engagement in posts by victims of abuse?}
+
+In this question, we aim to understand the relationship between sentiment scores and reader engagement. 
+We hypothesize that sentiment, whether positive, neutral, or negative, could impact how readers emotionally respond to and engage with the post.
+
+\subsubsection{Research Question 1:} \ms{Rewrite}
+
+\textit{How does the length of a Reddit post influence the level of engagement in posts by victims of abuse?} 
+
+This question will explore whether there is a relationship between the length of a Reddit post and its engagement, with the hypothesis that posts of certain lengths may be more likely to generate comments. 
+This kind of a relationship may occur due to several reasons, such as longer posts are seen as more detailed, or because shorter posts are more concise and easier to read, and so on.
+
+In our analysis, we opted to use word count of the Reddit post, not including the title, to estimate the level of detail and ``emotional investment'' provided by the author.
+We chose word count over metrics like characters, sentences, or paragraphs due to the diversity in writing styles among Reddit users. 
+Reddit's global user base includes people with varied linguistic backgrounds and personal expression styles, leading to differences in sentence length, paragraphing, and use of abbreviations, which can skew other metrics. 
+
+For example, a user who writes in long, descriptive sentences will have a high character count, while another who uses concise language or abbreviations may cover similar content with fewer characters. Similarly, some users might write in short, direct sentences or use multiple paragraphs, while others prefer dense, uninterrupted blocks of text. 
+These stylistic differences make character or sentence counts less reliable as indicators of narrative detail or emotional investment. 
+
+Word count, by contrast, is a more consistent measure across these styles, providing a stable estimate of how much information or emotion an author includes in their narrative.
+However, a drawback of word count is that it may still be influenced by how verbosely a person writes—some individuals naturally use more words to convey an idea, while others are more concise.
+
+\subsubsection{Research Question 2:} 
+
+\textit{How does the presence of a ``TL;DR'' (Too Long; Didn't Read) summary influence engagement in Reddit posts by victims of abuse?} 
+
+TL;DR is an acronym that stands for ``Too Long; Didn't Read''. 
+It refers to a brief summary of a post, typically placed at the beginning or end, that serves to highlight the key points or takeaway of the post. 
+It allows users to understand the core ideas without having to read through all the details by providing a concise version of longer posts. Here, we examine whether the inclusion of a TL;DR summary helps attract more readers and encourages comments. 
+The hypothesis is that a TL;DR may make the post more approachable, particularly for users who have limited time and possibly a shorter attention span. 
+
+% This feature indicates the author's awareness of audience engagement, recognizing that long posts may deter readers who prefer a quicker overview.
+% By including a TL;DR, the author makes the post more accessible and inviting, particularly in fast-paced environments like Reddit where attention spans are short.
+% Moreover, the TL;DR suggests the author's effort to organize and present the information efficiently, catering to users who may be interested in the main ideas but not the full detail. 
+% This can enhance engagement by attracting a wider audience, as it balances detail with brevity, increasing the likelihood of comments or interactions.
+
+\ms{Add about regular expressions used here}
+% The Presence of TL;DR (Too Long; Didn't Read) feature refers to a brief summary of a post, typically placed at the beginning or end, to highlight the key points for readers who may not have the time or interest to read the entire content. 
+% TL;DR is an acronym that stands for ``Too Long; Didn't Read'', and it serves to condense the main message or argument, allowing users to understand the core ideas without having to read through all the details by providing a concise version of longer posts. 
+% This feature indicates the author's awareness of audience engagement, recognizing that long posts may deter readers who prefer a quicker overview.
+By including a TL;DR, the author makes the post more accessible and inviting, particularly in fast-paced environments like Reddit where attention spans are short.
+
+Moreover, the TL;DR suggests the author's effort to organize and present the information efficiently, catering to users who may be interested in the main ideas but not the full detail. This can enhance engagement by attracting a wider audience, as it balances detail with brevity, increasing the likelihood of comments or interactions.
+
+\subsection{Hypothesis Testing}
+
+In this study, we explore various cause-and-effect relationships across different sets of variables. The following table summarizes the causal models tested.
+
+\textcolor{blue}{Implementation. The purpose of computing research is not so much to build a system that works or works well as to understand how and why it works (well) or fails to work (well). If your implementation has any nontrivial features and especially if the implementation bears some effect on your results or your evaluation, you include sufficient details that a person ``skilled in the art'' (using the term as the US Patent and Trademark Office uses it) would be able to reproduce your implementation, and thus to verify your results that depend upon the implementation. So be clear about how exactly it was carried out and how it may be replicated.}
+
+
+\textcolor{blue}{Approach.}
+\begin{itemize}
+    \item \textcolor{blue}{Conceptual and technical framework.}
+    \item \textcolor{blue}{Key concepts and terminology.}
+    \item \textcolor{blue}{Formal definitions, if any.}
+\end{itemize}
+
+\section{Results}
+
+\begin{itemize}
+    \item \textcolor{blue}{Evaluation. The purpose of the evaluation is to show how we may place credence in your claimed results? You don't need to build a complete working system for it to be useful for your research.}
+\end{itemize}
+
+\section{Discussion}
+
+\begin{itemize}
+    \item \textcolor{blue}{What your study and its evaluation didn't address}
+    \item \textcolor{blue}{Directions of special interest, list a few but don't list too many}
+\end{itemize}
+
+
+\section{Conclusion}
+\section{Glossary}
+\section{Abbreviations}
+
+\appendix
+\section{My Appendix}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+boyfriend & abusive & husband & abuser & ex \\ \hline
+mother & mom & father & story & girlfriend \\ \hline
+dad & life & gf & family & bf \\ \hline
+head & partner & wife & mum & daughter \\ \hline
+son & chest & fiancé & therapist & motherinlaw \\ \hline
+violent & sanity & phone & abuse & relationship \\ \hline
+name & grandfather & hair & verbally & younger \\ \hline
+fault & car & assault & current & exgf \\ \hline
+breaking & stepfather & exhusbands & place & emotionally \\ \hline
+support & situation & bofriend & physically & yr \\ \hline
+physical & option & doubt & mentally & childhood \\ \hline
+exboyfriendabuser & exlover & job & instinct & abused \\ \hline
+weirdly & birthday & grandmother & real & victim \\ \hline
+young & narcissistic & dog & stepdad & last \\ \hline
+future & room & landlord & pastpresent & limit \\ \hline
+spouse & split & fear & year & violently \\ \hline
+mind & face & fathersame & sick & exgirlfriend \\ \hline
+bedroom & tie & case & kid & sleep \\ \hline
+office & permission & thing & once & trust \\ \hline
+neck & exhusband & dream & campus & throw \\ \hline
+psych & child & work & past & miserable \\ \hline
+house & domestic & self & nook & binge \\ \hline
+trauma & confidence & man & narcassist & ptsd \\ \hline
+fiance & open &  &  &  \\ \hline
+\end{tabular}
+\caption{List of Relevant Words for Filtering Posts}
+\label{tab:relevant_words}
+\end{table}
+
+
+\ms{Add Vaibhav's filtering details}
+\ms{Add DAG here}
+\ms{Add -value tables for DAG}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|p{4cm}|p{12cm}|}
+\hline
+\textbf{Prompt Type} & \textbf{LLM Prompt \ms{Add llama 3.1}} \\ \hline
+\textbf{Relationship and Gender System Message} & 
+You are an NLP model specialized in analyzing texts related to sexual and domestic violence on social media. Extract features about the victim (the person harmed by the action) and the perpetrator (the person responsible for the harm). \\ \hline
+
+\textbf{Relationship Extraction Task} & 
+Your task is to analyze the following Reddit post and extract the relationship between the victim and the perpetrator at the time of the incident (not the current relationship). Consider only information explicitly available in the post and avoid making assumptions or inferences. 
+
+Select only one of the following options and use the provided definitions to guide your response: 
+1. Married Partner, 2. Non-Marital Romantic Partner, 3. Ex-Married Partner, 4. Ex Non-Marital Romantic Partner, 5. Direct Family Member, 6. Indirect Family Member, 7. Friend or Acquaintance, 8. Co-worker or Colleague, 9. Direct Authority Figure, 10. Common Authority Figure, 11. Stranger, 12. Not Specified.
+
+Format your output as follows: \texttt{\{"Relationship": "relationship type"\}}. Return only this format with no additional text, explanations, or options. \\ \hline
+
+\textbf{Victim Gender Extraction Task} & 
+Your task is to analyze the following Reddit post and extract the gender of the victim. The gender must be one of the following options: 'Male', 'Female', 'Other', or 'Not Specified'. 
+
+Use only explicitly mentioned gender information, such as 'I am a trans', 'I am a girl', '25F', '26m', or clear statements that directly specify the victim's gender. Do not infer gender based on pronouns or implicit context. 
+
+If the post does not explicitly state the gender of the victim, respond with 'Not Specified'. Your response must strictly follow the format: \texttt{\{"Victim Gender": "gender of the victim"\}}. Return only this format with no additional text, explanations, or options. \\ \hline
+
+\textbf{Perpetrator Gender Extraction Task} & 
+Your task is to analyze the following Reddit post and extract the gender of the perpetrator. The gender must be one of the following options: 'Male', 'Female', 'Other', or 'Not Specified'. 
+
+Use only explicitly mentioned gender information, such as 'he pushed me', 'she groped me', or clear statements that directly specify the perpetrator's gender. Do not infer gender based on pronouns or implicit context. 
+
+If the post does not explicitly state the gender of the perpetrator, respond with 'Not Specified'. Your response must strictly follow the format: \texttt{\{"Perpetrator Gender": "gender of the perpetrator"\}}. Return only this format with no additional text, explanations, or options. \\ \hline
+\end{tabular}
+\caption{LLM Prompts for Relationship and Gender Extraction in Reddit Posts.}
+\label{tab:relationship_gender_prompts}
+\end{table}
+
+\clearpage 
+\newpage
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{4cm}|p{12cm}|}
+        \hline
+        \textbf{Narrative Element} & \textbf{Prompt Description} \\ \hline
+        \multicolumn{2}{|l|}{\textbf{Setting}} \\ \hline
+        Physical Setting & Details on where events took place (e.g., home, public place, workplace). \\ \hline
+        Temporal Setting & Mention of specific times or periods (e.g., time of day, season). \\ \hline
+        Relationship Timeline Setting & Mention of specific phase of relationship where the event occurred. \\ \hline
+        Environmental Cues & Description of surrounding factors (e.g., presence of other people, isolated environment). \\ \hline
+        Geographical Context & Reference to specific locations (e.g., country, city, or neighborhood). \\ \hline
+        \multicolumn{2}{|l|}{\textbf{Characterization}} \\ \hline
+        Victim's Self-Description & How the victim describes themselves (e.g., feelings of vulnerability, resilience, identity). \\ \hline
+        Victim's Self-Blame & If the victim portrays expressions of guilt or responsibility for the abuse, reflecting internalized stigma or psychological manipulation by the abuser. \\ \hline
+        Abuser's Portrayal & Characteristics and roles of the abuser (e.g., aggressiveness, manipulative traits, authority role). \\ \hline
+        Supportive Figures & People playing a supportive role (e.g., friends, family, law enforcement) positively influencing the situation. \\ \hline
+        Antagonistic Figures & People playing a disruptive role (e.g., friends, family, law enforcement) negatively influencing the situation. \\ \hline
+        Bystanders & Individuals who witnessed or were aware of the abuse but did not intervene. \\ \hline
+        \multicolumn{2}{|l|}{\textbf{Plot}} \\ \hline
+        Main Event or Trigger & Specific incident that led to the post or turning point in the narrative. \\ \hline
+        Coping Actions & Actions taken by the victim in response to events (e.g., leaving the abuser, seeking support, internal resolve). \\ \hline
+        Challenges Faced & Specific obstacles complicating recovery or safety (e.g., financial issues, custody of children). \\ \hline
+        Resolution or Outcome & Whether and how the situation was resolved. \\ \hline
+        \multicolumn{2}{|l|}{\textbf{Intention}} \\ \hline
+        Intention & The intention of the author refers to the underlying purpose or motivation behind why they choose to share their story or experiences online. It reflects what the author hopes to achieve, express, or communicate to others through their post. Some examples are seeking support, offering advice, raising awareness, or processing their own emotions. Format your response as: \newline {"Intention": "Intention of the author"} \\ \hline
+
+    \end{tabular}
+    \caption{LLM Prompts for Extracting Narrative Structure}
+    \label{tab:narrative_structure}
+\end{table}
+
+\clearpage 
+\newpage
+
+
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{|p{4cm}|p{4cm}|p{8cm}|}
+    \hline
+    \textbf{Impact Type} & \textbf{Description} & \textbf{Example} \\ \hline
+    \textbf{Visible Physical Injuries} & Physical evidence of harm, such as bruises, fractures, or scars, resulting from abuse. & "I have scars all over my arms after that night." \\ \hline
+    \textbf{Financial Instability} & Economic challenges resulting from job loss or increased expenses caused by the abuse. Victims may struggle to regain independence or cover basic needs. & "I lost my job and can't afford rent because of the time I took off to recover." \\ \hline
+    \textbf{Legal Barriers} & Complications in navigating legal systems to obtain justice or protection, including lack of resources, intimidating processes, or inadequate support. & "I went to the police to file a complaint, but they didn't take me seriously because I had no proof of the abuse." \\ \hline
+    \textbf{Substance Use Disorder} & The misuse of alcohol, drugs, or other intoxicating substances as a way to cope with emotional pain, trauma, or stress caused by abuse. & "I started mixing drinks every night, telling myself it was just to unwind, but deep down, I knew I was trying to block out the memories." \\ \hline
+    \textbf{Eating Disorders} & Unhealthy eating patterns, including overeating or undereating, as a response to emotional stress. Victims may use food as a source of comfort or control. & "I either overeat to comfort myself or forget to eat all day." \\ \hline
+    \textbf{Sleeping Disorders} & Ongoing difficulty falling asleep, staying asleep, or achieving restful sleep due to the psychological impact of past trauma. & "Ever since the trauma, I can't sleep through the night without being woken up by nightmares." \\ \hline
+    \textbf{Self-harming/Suicidal} & Thoughts of suicide, suicide attempts, or self-harming behaviors as a result of overwhelming emotional pain caused by violence or abuse. & "I've thought about ending it all because of the violence, and I feel like I don't deserve to live." \\ \hline
+    \textbf{Depression} & A prolonged state of emotional distress characterized by persistent feelings of sadness, hopelessness, and a lack of interest or pleasure in daily activities. & "I feel numb, sad, and hopeless all the time, like nothing matters anymore. I don't know what to do." \\ \hline
+    \textbf{PTSD} & A severe anxiety disorder that develops after experiencing trauma, marked by flashbacks, intrusive thoughts, nightmares, and hypervigilance. & "I keep getting flashbacks of that night, and I can't sleep without nightmares." \\ \hline
+    \textbf{Anxiety} & A state of excessive worry, fear, or nervousness that disrupts normal functioning. & "I am so worried about what will happen next." \\ \hline
+    \textbf{Social Isolation} & Withdrawal from social interactions due to fear, shame, or manipulation. & "I can't explain my emotions to my friends because they don't understand me." \\ \hline
+    \textbf{Avoidance of Trauma-Related Triggers} & Avoidance of specific people, places, or situations that remind the victim of their trauma. & "I quit my job because my abuser works there, and I couldn't face seeing them every day." \\ \hline
+    \textbf{Stigma and Fear of Judgment} & A deep fear of being judged, blamed, or shamed by others, often rooted in societal stigma surrounding abuse. & "When I told my friend, they said it was my fault for staying in the relationship." \\ \hline
+    \textbf{Self-Blame} & Internalizing guilt and feeling personally responsible for the abuse. Victims may believe they could have prevented the trauma. & "I should have stood up for myself the first time it happened instead of letting it slide." \\ \hline
+    \end{tabular}
+    \caption{Types of Violence Impacts on Victims}
+    \label{table:violence_impact}
+\end{table}
+
+
+
+
+
+% \printcredits
+
+%% Loading bibliography style file
+\bibliographystyle{plainnat}
+% \bibliographystyle{model1-num-names}
+% \bibliographystyle{cas-model2-names}
+
+% Loading bibliography database
+% \bibliography{cas-refs}
+  
+\bibliography{Mansi}  
+
+\end{document}
+

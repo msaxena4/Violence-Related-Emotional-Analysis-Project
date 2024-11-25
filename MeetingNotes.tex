@@ -1,0 +1,865 @@
+\documentclass[letterpaper, 10pt]{article}
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{xurl}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={red},
+    urlcolor={blue!80!black}
+}
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+
+\newcommand{\hl}[1]{\noindent\rule{\textwidth}{1pt}\vspace{1em}\newline\textbf{\date~#1}\vspace{0.5em}\newline}
+\begin{document}
+
+\title{Emo-analysis project - Meeting Notes}
+
+\maketitle
+
+
+Google Doc link: \\
+\url{https://docs.google.com/document/d/1cSCdblro9buLobJSyGk_qgx_58lx9JBRtjWSChvSvgs/edit?pli=1}
+
+\hl{Jan 3}
+Objectives
+\begin{enumerate}
+    \item Emotion transition
+    \item for what? - prediction of emotion changes
+    \item emotion clustering/grouping
+    \item research question? - can we predict emotion changes by vocab usage
+    \item 
+\end{enumerate}
+
+
+plans
+\begin{enumerate}
+    \item word attribution - bigrams, trigrams, ...
+    \item data collecting + check statistical background
+    \item better model - classification, tokenizer, word attribution model, 
+\end{enumerate}
+
+
+\hl{Jan 10}
+\begin{enumerate}
+    \item data - survey paper, mental health, time series
+    \item classification model - NRC
+    \item emotion transition (markov model,)
+    \begin{itemize}
+        \item Continuous State MC
+    \end{itemize}
+    \item think a way of somehow utilizing word attribution - novelty
+    \begin{itemize}
+        \item Time-Series Multi-Logistic Reg
+        \item Time-Series NNet
+    \end{itemize}
+    \item ``Achini Adikari"
+\end{enumerate}
+
+Forums:
+\begin{enumerate}
+    \item Mental Health Forum: https://www.mentalhealthforum.net/research-requests/ \textbf{requires access - ask munindar maybe?}
+\end{enumerate}
+
+\hl{Jan 17}
+\begin{itemize}
+    \item Classification (emotion prediction using words lexicon)
+        \begin{itemize}
+            \item NRClex \url{https://www.tutorialspoint.com/emotion-classification-using-nrc-lexicon-in-python}
+            \item Lexmo \url{https://betterprogramming.pub/unlocking-emotions-in-text-using-python-6d062b48d71f}
+            \item but no accuracy info
+            \item transformer model (j-hartmann/emotion-english-distilroberta-base): Ekman's 6 basic emotions, plus a neutral \url{https://huggingface.co/j-hartmann/emotion-english-distilroberta-base}
+        \end{itemize}
+    \item data source of Achini Adikari's paper
+        \begin{itemize}
+            \item \url{https://www.healingwell.com/community/default.aspx}
+            \item access to user's all posts. active and plenty
+            \item health forum (physical, mental)
+        \end{itemize}
+    \item reddit \url{https://osf.io/fcg8v}
+    \item preprocessing process \url{https://www.jmir.org/2023/1/e45267/PDF}
+    \item Data Collection (Mental Health Forums) - need to ask permission for ethical purposes. List of possible forums we can use:
+    \begin{itemize}
+        \item \textbf{Mental Health Forum:} https://www.mentalhealthforum.net/research-requests/ 
+        \begin{itemize}
+            \item Try using this for scraping? https://jovian.com/sanuann/webscraping-final $\rightarrow$ not working 
+            \item ``We give preference to research being done by established members of our forum and/or people who have personal experience of mental health difficulties."
+        \end{itemize}
+        \item \textbf{Talk Life:} https://www.talklife.com/research
+        \begin{itemize}
+            \item used in this paper: https://ojs.aaai.org/index.php/ICWSM/article/view/7328/7182
+            \item this paper compares Reddit and TalkLife platforms
+            \item This paper also mentions ``The entire REDDITdataset used in this pa-per can be accessed from Google BigQuery https://bit.ly/2WQPosf"
+        \end{itemize}
+        \item \textbf{7 cups:} https://www.7cups.com/community-guidelines/
+        \item \textbf{BeCOPE dataset} https://www.biorxiv.org/content/10.1101/2023.09.06.556577v1.full.pdf
+        \begin{itemize}
+            \item introduced in this paper
+            \item ``a novel behavior encoded Peer counseling dataset comprising over 10,118 posts and 58,279 comments sourced from 21 mental health-specific \textbf{subreddits}. The dataset is annotated using three major fine-grained behavior labels: (a) intent, (b) criticism, and (c) readability, along with the emotion labels"
+            \item They also do an emotional label based analysis
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\textbf{Todos for next week}
+\begin{itemize}
+    \item Ask Munindar about getting data
+\end{itemize}
+
+
+\hl{Jan 24}
+Meeting with Vaibhav:
+\begin{itemize}
+    \item Threshold on the text in the posts on Reddit - at least 100 characters
+    \item Munmun De Choudhury: \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14432/14281}
+    \item Conferences to get ideas:
+    \begin{itemize}
+        \item ICWSM
+        \item CSCW
+        \item WWW conference: https://www2024.thewebconf.org
+        \item Web science
+        \item IJCAI
+    \end{itemize}
+\end{itemize}
+Todos
+\begin{itemize}
+    \item Target: ICWSM - May 15th
+    \item Munmun paper
+    \item Found some interesting Kaggle datasets:
+    \begin{itemize}
+        \item https://www.kaggle.com/datasets/thedevastator/mental-health-support-feature-analysis
+        \item https://www.kaggle.com/datasets/ruchi798/stress-analysis-in-social-media/data
+    \end{itemize}
+    \item Ideas:
+    \begin{itemize}
+        \item Method to scrape Reddit Data (from Sherry): \url{https://www.reddit.com/r/DataHoarder/comments/1479c7b/historic_reddit_archives_ongoing_archival_effort/?rdt=63413}
+        \item sentence-level topic analysis using the large-language model MPNet (based on the assumption that each item in the analyzed dataset is about one topic)
+    \end{itemize}
+\end{itemize}
+
+\hl{Jan 31}
+Todo
+\begin{itemize}
+    \item Find research gaps
+    \item Divide readings and think of research questions
+\end{itemize}
+
+
+\hl{RQ Brain storming:}
+\begin{itemize}
+    \item Understanding which comments are empathetic according to OP
+    \item Does time taken to receive a comment have an effect on the OP's emotion? Does the tone of the comment have an effect? \textcolor{blue}{Factors to account for: Comment effect, Temporal Effect}
+    \item Combine OPs and build an emotion transition model on that, based on what they reply to 
+    \item ZhenGuo paper - \url{https://www.csc2.ncsu.edu/faculty/mpsingh/papers/societal/WWW-20-CMV.pdf} 
+   check features
+\end{itemize}
+
+\hl{Meeting with Dr. Mishra - 02/21/24}
+Brainstorming
+\begin{itemize}
+    \item Looking at comments in response to an event - elections, war, abortion, layoffs
+    \item Social isolation, substance use
+    \item LGBT community more susceptible to drugs of abuse and mental health disorders (anti-LGBT movements)
+    \item Multiple posts from a user - general trend in positive/negative emotions
+    \item Domestic violence, child abuse, r/survivinginfidelity
+    \item discrimination - race, ethnicity, gender 
+\end{itemize}
+
+\hl{Brainstorming other directions: }
+
+Papers:
+\begin{enumerate}
+    \item \url{https://link.springer.com/chapter/10.1007/978-3-031-43129-6_22}
+    \item \url{https://scholarsarchive.byu.edu/facpub/4155/}
+    \item LGBT, finding increase in anxiety, sadness, etc during COVID-19 \url{https://publichealth.jmir.org/2021/8/e29029}
+    \item Substance use \url{https://www.jmir.org/2023/1/e45267/}
+    
+\end{enumerate}
+
+\begin{itemize}
+
+    \item \textbf{r/domesticviolence} - 
+    \begin{itemize}
+        \item difference from r/depression - OPs seek help, advice, ways to come out of a difficult situation. Responses that are most helpful are upvoted/responded to by OP. On r/depression, people share emotions; responses that validate their emotions and make them feel less lonely are considered empathetic.
+        \item Not a lot of NLP research on this topic - mainly linguistic analysis
+        \item relation between loneliness and depression? \url{https://www.reddit.com/r/domesticviolence/comments/1b1assr/struggling/}
+    \end{itemize}
+    
+    \item \textbf{r/LGBT}
+    \begin{itemize}
+        \item Would require preprocessing, since useful posts are mixed with posts about LGBT haircuts, flags
+        \item lot of politics, political article linkes, images, memes are shared
+    \end{itemize}
+\end{itemize}
+
+\hl{Feb 29}
+\begin{itemize}
+    \item r/TwoXChromosomes: Subreddit for posts from women's perspective - random collect of posts, eg - relationship, mothers, pregnancy, lesbian, etc.
+    \begin{itemize}
+        \item Benefit of using TwoXChromosomes over - more traction than r/domesticviolence. Can filter out relevant posts and find more comments to it
+    \end{itemize}
+    \item Story understanding, Hui guo(\url{https://www.csc2.ncsu.edu/faculty/mpsingh/papers/societal/ICSE-20-Caspar.pdf}
+    \begin{itemize}
+        \item Identifying user action and app's problematic responses from app reviews to help developers. Their model, Caspar, generates action-problem pairs from app review stories, and also infer app problems that may not have been reported yet
+    \end{itemize}
+\end{itemize}
+
+To Do before Wed meeting - 
+\begin{enumerate}
+    \item Look at 5-10 posts with high traction, form a hypothesis
+    \item Potential RQ1: OP's comments, replies are helpful, empathetic
+    \item Potential RQ2: What posts from the OP gain more traction? Writing style, Reddit algorithm, topic. What makes a post ``Hot" or ``Rising"
+    \item Types of domestic violence and how many posts per topic.
+\end{enumerate}
+
+
+\hl{Mar 6}
+
+Papers: 
+
+\begin{itemize}
+    \item building dataset presenting wellness dimensions (finding potential text spans) \url{https://www.sciencedirect.com/science/article/pii/S0950705123009784?casa_token=HF7zm8mutQYAAAAA:uvoIC5xlm4BvvasUNu7IOoHFa6i2Xa_nAwZgdAfkwkNrOHk-9tKiaYEtzoG6crMkJLDRC99ro5Q}
+    \item Specific situational narratives compared to general messages of sadness resonate more with individuals engaged in SITBs \url{https://www.sciencedirect.com/science/article/pii/S0747563223001371?casa_token=V1JGwRL8dDMAAAAA:QdicghW2_9IahrfqSU1al2EClDv3Gy15jGCSrVlp6co6zmWCK_FON0VQFfr_5DKkrBupFl6Bzys}
+    \item Using Comments for Predicting the Affective Response to Social Media Posts \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10388133} Looks at Facebook posts and predicts reaction - Anger, Haha, Sad
+
+\end{itemize}
+
+Framing Hypothesis:
+
+\begin{itemize}
+    \item Using r/TwoXChromosome subreddit, and searching for posts related to ``violence”, ``depression", ``childhood", ``divorce" etc. 
+    \begin{itemize}
+        \item Find posts from the "new" section and from "relevance" section - number of comments on posts can vary from 10 to 1.2k. Analyse the posts with high traction - what makes a post go viral? 
+    \end{itemize}
+\end{itemize}
+
+\hl{6 March - Meeting with Dr. Mishra}
+
+\begin{itemize}
+    \item consider differences in forms of violence or abuse - people may talk more about domestic violence than childhood violence, due to higher number of domestic violence cases, but also more shame around childhood assault, etc. 
+    \item social support literature? does more comments mean more support? what kind of support are the OP searching for? how helpful are the comments on the posts? is it truly helpful, or just a controversial topic so the people replying are just interacting among themselves
+    \item Does emotion of the post play a role with traction? 1st person pov, 2nd person?
+    \item tone of comments would be helpful too?
+    \item Get human subjects, and perform real-life study as well. Not just social media, to make it a stronger case. 
+    \item Data? Ruijie or Vaibhav's data? 
+    \begin{itemize}
+        \item \url{https://pubmed.ncbi.nlm.nih.gov/17224181/} 
+        \item \url{https://pubmed.ncbi.nlm.nih.gov/30406715/} 
+        \item \url{https://cftste.experience.crmforce.mil/arlext/s/baadatabaseentry/a3Ft0000002Y39CEAS/opt0026}
+        \item \url{https://ffcws.princeton.edu/about}
+        \item \url{https://addhealth.cpc.unc.edu/about/#additional-add-health-data} 
+    \end{itemize}
+\end{itemize}
+
+
+\hl{To Do:}
+\begin{itemize}
+    \item Convert doc to ICWSM format
+    \item Data collections
+    \item Social support papers:
+    \begin{itemize}
+        \item Examining Social Capital, Social Support, and Language Use in an Online Depression Forum: Social Network and Content Analysis: \url{https://www.jmir.org/2020/6/e17365/PDF}
+        \begin{itemize}
+            \item Ask Dr. Mishra is this paper is good enough to say that more comments means more support for the OP 
+            \item \textbf{Summary on Statistical Analysis:} The authors have conducted association-based analysis for their hypotheses. They have evaluated the effects of the variables of interest after controlling for some variables that may have potential effect. \textcolor{orange}{A control variable is one that is kept unaltered in the experiment. It is usually an intrinsic property of the subject or the experiment that could have an effect on the results.} However, for a better "causal inference", it may be more appropriate to conduct the analysis after considering confounding variables. \textcolor{orange}{A confounding variable is a variable other than that of interest that can influence both the cause and the effect.} Based on their analysis, we can only make claims in the form of "A is positively (or negatively) associated with B after considering the effect of C (, D, etc.)". We cannot claim, however, that "A causes B". Further, for the analysis of H2, H3 and H4, further analysis is required to determine potential multicollinearity in data. Also, there is need of further analysis based on interaction effects of variables. Changing of sign of effect in H2 and yet being significant raises questions on the nature of association between explanatory variables and the effect of interactions. A significant interaction is quite likely. \textcolor{orange}{Main effects, as evaluated by the effect of the variables themselves in the models mentioned, capture the individual effects of the variables. Interactions capture further effects of the interplay of the explanatory variables. Besides, in presence of multicollinearity between explanatory variables, if both are included in the model, one of them will be rendered insignificant. However, this is completely misleading as they both essentially express the effects of each other. The analysis should be performed only after careful variable selection.} I do not see any analysis pertaining to variable selection and analysis of association between variables, hence it is impossible to confirm these suspicions.\\ The terminology about "supporting a hypothesis" is a little different from standard statistical usage. In their terminology, "H is supported" means that the null hypothesis (usually stating that the association is not significant) is rejected. The p-values are mere tools to confirm a hypothesis that is scientifically valid. Hence, as they mention, the effects being significant with the association being intuitively contradictory does not infer anything. It just means that we need more nuanced analysis and there may be other unobserved confounders or control variables to account for.
+        \end{itemize}
+        \item Providing online support for young people with mental health difficulties: challenges and opportunities explored: \url{https://onlinelibrary.wiley.com/doi/full/10.1111/j.1751-7893.2008.00066.x}
+        \item Online Counselling: \url{https://onlinelibrary.wiley.com/doi/epdf/10.1002/jclp.21974}
+        
+    \end{itemize}
+    \item Munmun Chowdhary paper: Reddit Mental Health Discourse \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14526/14375}
+    \item Dreaddit data \url{https://www.researchgate.net/profile/Elsbeth-Turcan-2/publication/337005802_Dreaddit_A_Reddit_Dataset_for_Stress_Analysis_in_Social_Media/links/5ff4c7b2a6fdccdcb8339342/Dreaddit-A-Reddit-Dataset-for-Stress-Analysis-in-Social-Media.pdf}
+    \item Text-based empathy detection on social media: \url{https://studenttheses.uu.nl/bitstream/handle/20.500.12932/41238/FinalThesisNikolaosBentis.pdf?sequence=1&isAllowed=y}
+    \item reddit archive \url{https://convokit.cornell.edu/documentation/subreddit.html}
+
+    \item forming support-seeking msgs \url{https://repositorio.consejodecomunicacion.gob.ec/bitstream/CONSEJO_REP/6783/1/Attracting.pdf}
+\end{itemize}
+
+\hl{03/26/23}
+
+\begin{itemize}
+    \item Types of Violence UN Women: \url{https://www.unwomen.org/en/what-we-do/ending-violence-against-women/faqs/types-of-violence}
+    \item  Paper for sexual violence keywords: \url{https://ojs.aaai.org/index.php/ICWSM/article/view/7296}
+    \begin{itemize}
+        \item Keywords: \textit{Abuse, Assault, Attack, Beat, Bully, Catcall, Flirt, Fondle, Force, Fuck, Grab, Grope, Harass, Hit, Hurt, Kiss, Masturbate, Molest, Pull, Rape, Rub, Slap, Stalk, Threat, Touch, Use, Whistle}
+    \end{itemize}
+    \item DBpedia: \\ 
+    Paper: \url{https://link.springer.com/chapter/10.1007/978-3-030-41407-8_3}  \\
+    DBpedia: \url{https://link.springer.com/chapter/10.1007/978-3-540-76298-0_52}
+\end{itemize}
+
+\hl{Lab Meeting - 03/28}
+\begin{itemize}
+    \item Adversity - how to people deal with it?
+    \item State changes of users over time
+    \item Try to discover something about their profession, age, etc by the emotions/violence they share. eg, are people in military leaving their profession?
+    \item Traction is a common topic since News writers try to write posts that gain traction
+    \item \url{https://www.jmir.org/2023/1/e48607/}
+    
+\end{itemize}
+
+\hl{Papers by Dr. Mishra:}
+
+\begin{enumerate}
+    \item \textbf{Victimization and poly-victimization among women:}
+    \begin{itemize}
+        \item Poly- and Distinct- Victimization in Histories of Violence Against Women (Jorge Rodriguez-Menés \& David Puig \& Cristina Sobrino) \\  \url{https://link.springer.com/article/10.1007/s10896-014-9638-x}
+        \begin{itemize}
+            \item A questionnaire on women’s experiences of violence against them - 10 known victims of violence in intimate relations and 20 randomly selected women
+            \item Hypothesis: Known- victims of intimate partner’s violence (IPV) were more likely to be poly-victimized than randomly selected women
+            \item Two main explanations on poly-victimization: (1) change in personal state of victim mentally and financially, (2) women's socio-economic conditions
+            \item Methods: Multiple Correspondence Analysis (like PCA but with categorical vars) - ``used this to identify one victimization profile of repeated and traumatic (poly-) victimization, and a second profile of sporadic and less serious (distinct) victimization"
+            \item Mann–Whitney test (U test) - ``assesses if cases in one group tend to have higher scores than observations in the other group in the variable of interest - poly-victimization"
+        \end{itemize}
+        \item Violence against women and mental health (Sian Oram, Hind Khalifeh, Louise M Howard) \url{https://pubmed.ncbi.nlm.nih.gov/27856393/}
+        \begin{itemize}
+            \item review paper on connection of violence against women with the impact it has on their mental health - domestic violence, sexual violence, female genital mutilation, human trafficking, and compared it to violence against men
+        \end{itemize}
+        \item Intimate Partner Violence Polyvictimization and Health Outcomes (Hyunkag Cho, Woojong Kim, Abbie Nelson and Jennifer Allen) \url{https://journals.sagepub.com/doi/pdf/10.1177/10778012231192585}
+        \begin{itemize}
+            \item Relationship between violence and victim's health (mental, physical)
+        \end{itemize}
+        \item The Effects of Polyvictimization by Intimate Partners on Suicidality Among Salvadoran Women (Chunrye Kim, Lidia Vasquez, and Valli Rajah) \url{https://journals.sagepub.com/doi/pdf/10.1177/08862605231162654}
+        \begin{itemize}
+            \item 
+        \end{itemize}
+        \item  Alhabib, S., Nur, U., \& Jones, R. (2010). Domestic violence against women: Systematic review of prevalence studies. Journal of family violence, 25, 369-382
+        \item  
+    \end{itemize}
+
+    \item \textbf{Victimization and poly-victimization among LGBTQ+ youth:}
+    \begin{itemize}
+        \item A Comparison of Violence Victimization and Polyvictimization Experiences Among Sexual Minority and Heterosexual Adolescents and Young Adults (Laura M. Schwab-Reese, Dustin Currie, Corinne Peek-Asa) \url{https://journals.sagepub.com/doi/full/10.1177/0886260518808853}
+        \begin{itemize}
+            \item analyse disparities in mono- and poly-victimization among sexual minority young people compared with their heterosexual peers
+            \item Data: National Longitudinal Study of Adolescent to Adult Health, a nationally representative cohort study started in 1994. subset of 20,745 adolescents from the school-based sample to complete four waves of data collection from 1995 to 2008. o  
+            \item participants must have participated in all four waves of data collection, responded to questions about each type of violence, and reported their sexual orientation during Wave IV. finally, total 9,828 participants 
+            \item four types of victimization: child maltreatment, general criminal assault, IPV, and sexual assault
+            \item 4 waves: 
+            \begin{itemize}
+                \item Wave I: 1994-1995, 12-18 years old
+                \item Wave II: next school year, 13-18 years old
+                \item Wave III: 2001-2002, 18 and 26 years old
+                \item Wave IV: 2008, 24 and 32 years old
+            \end{itemize}
+        \end{itemize} 
+        \item Inwards-Breland, D. J., Johns, N. E., \& Raj, A. (2022). Sexual violence associated with sexual identity and gender among California adults reporting their experiences as adolescents and young adults. JAMA network open, 5(1), e2144266-e2144266 \url{https://pubmed.ncbi.nlm.nih.gov/35050356/}
+        \begin{itemize}
+            \item 
+        \end{itemize}
+        \item DeKeseredy, W. S., Schwartz, M. D., Kahle, L., \& Nolan, J. (2021). Polyvictimization in a college lesbian, gay, bisexual, transgender, and queer community: The influence of negative peer support. Violence and Gender, 8(1), 14-20.
+        \begin{itemize}
+            \item 
+        \end{itemize}
+        \item Kassing, F., Casanova, T., Griffin, J. A., Wood, E., \& Stepleman, L. M. (2021). The effects of polyvictimization on mental and physical health outcomes in an LGBTQ sample. Journal of Traumatic Stress, 34(1), 161-171
+        \begin{itemize}
+            \item 
+        \end{itemize}
+        \item McConnell, E. A., Clifford, A., Korpak, A. K., Phillips II, G., \& Birkett, M. (2017). Identity, victimization, and support: Facebook experiences and mental health among LGBTQ youth. Computers in Human Behavior, 76, 237-244
+        \begin{itemize}
+            \item 
+        \end{itemize}
+    \end{itemize}
+    
+\end{enumerate}
+
+RQ: Looking at how many comments are helpful/empathetic. Filtering out such comments. Also, how do emotions in the post have a role on traction, ``score", \#helpful comments
+
+\hl{Examples of violence posts:}
+\begin{enumerate}
+    \item \url{https://www.reddit.com/r/TwoXChromosomes/comments/o978x/why_do_women_and_other_people_too_stay_in_abusive/}
+    \item \url{https://www.reddit.com/r/TwoXChromosomes/comments/oz9bw/twox_today_i_did_it/}
+    \item 
+    \url{https://www.reddit.com/r/TwoXChromosomes/comments/1e0rjr/i_called_the_police_on_my_neighbor_for_choking/}
+\end{enumerate}
+
+\hl{3rd April - Meeting with Dr. Mishra}
+\begin{enumerate}
+    \item Are posts with sexual violence with partners gaining traction?
+    \item Look at other subreddits too, not just r/domesticviolence
+    \item How do people form communities? Form a network which connects those people that comment on each others posts, i.e., they provide supportive comments to who's posts. 
+    \begin{itemize}
+        \item Is there a difference in a way someone makes a post, and makes a comments?
+        \item Is there a correlation to the number of positive comments a person receives on their post, and the number of positive comments a person makes on other's posts?
+        \item Does getting many positive supportive comments on your post mean you post more supportive comments to others posts?
+    \end{itemize}
+    \item Compare violence against men and women using the r/abusive\_relationships subreddit
+\end{enumerate}
+
+
+\hl{04/08, 04/09}
+\begin{itemize}
+    \item r/sexualassault, r/SexualHarassment, r/meToo, r/domesticviolence
+    \item filter male/female, or "gender"
+    \item make sure all posts are relevant - use a filtering method
+    \item randomly sample 50 stories of domestic violence and identify the type 
+    \item Hypothesis: Do survivors look at emotional support, and relatives look at tangible advice
+    \item how to define relevant stories (posts and comments)
+    \begin{itemize}
+        \item \textbf{relevant posts} - survivor stories, not from relatives, or other 3rd persons
+        \item domestic violence by spose, or parents as well?
+        \item Look at personal possessive pronouns to identify 3rd person pov, look at other heuristics from vaibhav's MeToo paper
+        \item \textbf{relevant comments} - remove all comments from OP, look at first layer of comments
+    \end{itemize}
+    \item \url{https://www.sciencedirect.com/science/article/pii/S0736585324000248?casa_token=Wg-GVqkrX54AAAAA:-jwDsasNltgkdXTEE981QGuJ543cQ5YYWOk85cF-L2SKdc1BGE8rdblu9voqVAPoqDCpIk5V}
+\end{itemize}
+
+\hl{04/16}
+\begin{itemize}
+    \item \textbf{Domestic Violence Definition:} power misused by one adult in a relationship to control another, through violence and other forms of abuse
+    \begin{itemize}
+        \item physical assault
+        \item psychological abuse
+        \item social abuse
+        \item financial abuse, economic deprivation 
+        \item sexual assault
+        \item threats, emotional insults 
+    \end{itemize}
+    \item Labelling 50 random posts from the domestic violence dataset using this definition - labelling:
+    \begin{itemize}
+        \item Relevance	
+        \item Gender of victim	
+        \item Gender of abuser
+        \item Relation of abuser to victim	
+        \item Topic	
+        \item Reporter
+    \end{itemize}
+    \item This gives:
+    \begin{itemize}
+        \item 1 post had the text deleted
+        \item 30 posts were relevant
+        \item 19 posts were irrelevant - because they were not written by the survivor, or they were just to create awareness about dometic violence, or a petition, etc.
+    \end{itemize} 
+    \item Mean and standard deviation of length, and check if there are many short posts, then keep them, if there are not many then remove. Look at boxplots on all posts and see distribution of length, combine all datasets into one, and do BoxPlots (MeToo posts are already filtered)
+    \item wordnet
+\end{itemize}
+
+
+Filtering Iteration 2:
+1. “My”: 
+2. 2 stage filtering - 
+    1. First filtering with the body
+    2. Then filter obvious flags from the title, like neighbour
+
+\hl{05/07/24}
+\begin{itemize}
+    \item Hypothesis 1: does having TLDR cause more supportive comments?
+    \item Hypothesis 2: does having an expressive/catchy title cause more supportive comments?
+    \item Hypothesis 3: Does the last paragraph, or first paragraph convey the same message as the entire post? Could be checked via embeddings?
+    \item Hypothesis 4: See for a way to extract emotions - see if that plays a role
+    \item Look at emotion transition within a post - is there a pattern there?
+    \item Look at psychological papers, and see if we can prove those hypotheses?
+    \item Topic Modelling - BERTopic
+    \item Try to get r/domesticviolence newer data as a validation dataset
+    \item Look at Sherry's paper - finding what part of a post a comment is replying to
+\end{itemize}
+
+
+Target Journals:
+\begin{itemize}
+    \item \url{https://www.sciencedirect.com/journal/computers-in-human-behavior}
+    \item \url{https://jair.org/index.php/jair/SpecialTrack-AIandSociety}
+    \item \url{https://www.wsdm-conference.org/2024/accepted-papers/}
+\end{itemize}
+
+\hl{05/28}
+
+\begin{itemize}
+    \item Lowercase before filtering
+    % \item \textbf{First Iteration:}
+    % \begin{itemize}
+    %     \item VP contains ``me" in title
+    %     \item if word after "my" is a blood relative in the text
+    % \end{itemize}
+    
+    \item \textbf{Second Iteration:}
+    \begin{itemize}
+        \item If a personal pronoun is being used in title (include all)
+        \item If "my", check the word after, and if it is a relative in title
+    \end{itemize}
+
+    \item my ``21F" girlfriend
+    \item \textbf{different method}: 
+    \begin{itemize}
+        \item Elimination based on body text, you are left with X rows 
+        \item You eliminate titles not having first person pronouns, you are left with Y rows
+        \item You eliminate rows with irrelevant subject of ``my'', you are left with Z rows 
+    \end{itemize}
+
+    \item \textbf{Final filtering approach:}
+    \begin{itemize}
+        \item Preprocessing text and title col: 
+        \begin{itemize}
+            \item  Remove punctuation
+            \item Convert to lowercase
+            \item Remove age and gender tags
+            \item Replace any double spaces with single spaces
+        \end{itemize}
+        \item \textbf{First filtering heuristic:} Check if the text body contains first person personal pronouns (me, mine, myself, i)
+        \item \textbf{Second filtering heuristic:} Identify words that occur after the word "my" and convert them to their base form (lemmatization)
+    \end{itemize}
+\end{itemize}
+
+\hl{5/31: Guidelines for manual inspection}
+
+\textbf{Domestic Violence Definition} \\
+Domestic violence can be described as the power misused by one adult in a relationship to control another. It is the establishment of control and fear in a relationship through violence and other forms of abuse. This violence can take the form of physical assault, psychological abuse, social abuse, financial abuse, or sexual assault. The frequency of the violence can be on and off, occasional or chronic.
+“Domestic violence is not simply an argument. It is a pattern of coercive control that one person exercises over another. Abusers use physical and sexual violence, threats, emotional insults and economic deprivation as a way to dominate their victims and get their way”. (Susan Scheter, Visionary leader in the movement to end family violence)
+
+\textbf{According to Dr. Mishra: } \\
+Domestic violence is typically an umbrella term for any violence that happens within a residence
+Intimate partner violence is among partners whether they reside together or not and could include things like stalking and harassment
+Child maltreatment includes abuse (physical, sexual, emotional) and neglect (physical, supervisory, medical) which is commision or omission of an act by a caregiver
+For our task, we will include intimate partner violence and child maltreatment as well.
+
+This is because children who are witnesses to domestic violence at home and experience maltreatment are likely to witness violence at home as well.
+
+\hl{June 13: Final Filtering of all 4 subreddits, stats:}
+
+\begin{enumerate}
+    \item \textbf{Domestic Violence:} 45/50 relevant posts, for 710 total posts
+    \item \textbf{Me Too:} 45/50 relevant posts, for 850 total posts
+    \item \textbf{Sexual Harrasment:} 46/50 relevant posts, for 3665 total posts
+    \item \textbf{Sexual Assault:} 49/50 relevant posts, for 418 total posts
+\end{enumerate}
+
+Weighted precision across all 4 subreddits: 90.29\% 
+
+\hl{June 18: Experiments}
+
+\begin{enumerate}
+    \item \textbf{Hypothesis 1:}
+    \begin{itemize}
+        \item Gender, Age (check Vaibhav’s code to extract gender)
+        \item Length of posts
+        \item Number of paragraphs
+        \item TLDR
+    \end{itemize}
+    \item \textbf{Hypothesis 2:}
+    \begin{itemize}
+        \item Emotion classification - split post into multiple paragraphs
+        \item Github repo for emotion classification: \url{https://github.com/Baxelyne/LEM}
+    \end{itemize}
+\end{enumerate}
+
+\hl{July 17}
+
+\begin{itemize}
+    \item P-Raw
+    \item VADER on individual posts, or those with many comms
+    \item Find TF-IDF scores for the title/text and find top most important words. Then VADER analysis.
+\end{itemize}
+
+\hl{Narratives (10th Oct)}
+\begin{enumerate}
+    \item \textbf{Psycholinguistics: Shame and Embarrassment}
+    \begin{itemize}
+        \item \textbf{Hypothesis:} How do expressions of emotions like shame and embarrassment in posts influence the support received? Does vulnerability draw responses?
+        \item \textbf{Linguistic Markers}: Self-deprecating language, apologies, expressions of regret, etc.
+        \item \textbf{Theories}:
+        \begin{itemize}
+            \item \textbf{Social Support Theory:} Emotional, informational, and practical support from friends, family, or communities helps individuals cope with stress and adversity. Social support can improve resilience, reduce negative health outcomes, and enhance overall life satisfaction.
+            \item \textbf{Affective Responses:} Emotional reactions that individuals experience in response to stimuli, events, or situations
+            \item How social support can promote resilience about survivors?
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Language and Gender}
+    \begin{itemize}
+        \item \textbf{Hypothesis:} How does the gender (and age) of OP affect the support received and also ``positivity level" of replies (by analysing comments)?
+        \item \textbf{Stylistic Differences:} Examine language patterns of OP (e.g, whether it is more assertive or empathetic), and given their gender, how does this impact the responses received. Based on the 
+        \item \textbf{Theories:}
+            \begin{itemize}
+                \item \textbf{Gender Schema Theory:} Societal expectations shape the way children understand and enact gender, leading to the reinforcement of traditional gender roles over time.
+                \item \textbf{Intersectionality:} Refers to the interconnectedness of social categories, such as race, gender, class, sexuality, ability, and so on - all of which shape an individual's experiences and opportunities. 
+                \begin{itemize}
+                    \item How does the OP's background (language, gender, race, etc) effect the way they express their emotions, etc.
+                \end{itemize}
+            \end{itemize}
+        \end{itemize}
+
+    \item \textbf{Speech Act Theory}  
+    \begin{itemize}
+        \item \textbf{Hypothesis:} Use Speech Act Theory to categorize the functions of language in posts (e.g., requesting advice, sharing experiences) and how these functions affect the comments received. Explore the impact of these speech acts on the readers’ emotions and subsequent replies.
+        \item \textbf{Definition:} Language functions not only to convey information but also to perform actions. According to this theory, when people speak, they are often doing something beyond merely stating facts; for example, they can make requests, give orders, offer promises, or express apologies.
+        \item Speech acts are categorized into three main types: 
+        \begin{itemize}
+            \item Locutionary Acts (the actual utterance)
+            \item Illocutionary Acts (the intended meaning or function of the utterance)
+            \item Perlocutionary Acts (the effect the utterance has on the listener)
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Rhetorical Strategies for Violence Stories:}
+    \begin{itemize}
+        \item \textbf{Hypothesis:} How do different rhetoric strategies influence the readers?
+        \item \textbf{Common strategies} 
+        \begin{itemize}
+            \item \textbf{Ethos (Credibility):} Establishing the author's credibility or moral character to gain trust.
+            \item \textbf{Pathos (Emotion):} Evoking emotions in the audience to elicit a strong emotional response, such as sympathy or anger.
+            \item \textbf{Logos (Logic):} Using logical arguments and evidence to persuade the audience.
+            \item \textbf{Narrative Structure:} Employing storytelling elements (e.g., conflict, climax, resolution) to engage readers emotionally and intellectually.
+            \item \textbf{Imagery and Descriptive Language:} Creating vivid images that draw readers into the experience and elicit empathy or disgust.
+        \end{itemize}
+    \end{itemize}
+    
+\end{enumerate}
+
+
+\hl{Literature Survey:}
+\begin{enumerate}
+    \item \url{https://www.tandfonline.com/doi/abs/10.1080/14680777.2019.1706605}
+    \item \url{https://www.taylorfrancis.com/books/mono/10.4324/9781315229164/rhetoric-communication-perspectives-domestic-violence-sexual-assault-amy-propen-mary-schuster}
+    \item \url{https://www.tandfonline.com/doi/abs/10.1080/14680777.2021.2006260}
+    \item \url{https://scholar.google.com/scholar?hl=en&as_sdt=5%2C34&sciodt=0%2C34&cites=6570044828664089121&scipsc=1&q=rhetorical+strategies&oq=rhetoric}
+\end{enumerate}
+
+\hl{LLM Prompting:}
+
+
+\textbf{Narratives in Survivor stories:} \\
+Paper reference: \url{https://search.informit.org/doi/epdf/10.3316/informit.160821193555976}
+Features extracted using LLM Prompting - Intention behind the post:
+\begin{enumerate}
+    \item Needing a supportive community
+    \item Seeking advice on online platforms
+    \item Storytelling: ‘I just really needed to get it out’
+\end{enumerate}
+
+\textbf{Age and Gender:} \\
+Features extracted using LLM Prompting
+\begin{enumerate}
+    \item Relationship	
+    \item Victim age	
+    \item Victim gender	
+    \item Perpetrator age	
+    \item Perpetrator gender	
+    \item POV of the post
+\end{enumerate}
+
+\textbf{Narrative Analysis: } \\
+Resources
+\begin{enumerate}
+    \item \url{https://books.google.com/books?hl=en&lr=&id=vLIRDAAAQBAJ&oi=fnd&pg=PA47&dq=social+resilience+Narrative+Depth&ots=1N_WjopmNC&sig=wmpGu94f588Klgk-Yo2lcF76CCo#v=onepage&q&f=true}
+    \begin{enumerate}
+        \item \textbf{Narrative Process} - perspective taken by the narrator on the experience being related (vantage point)
+        \begin{itemize}
+            \item internal - emotional responses to situations
+            \item external - details of an event/situation
+            \item reflexive - analytical endeavor to make meaning of an event, thought or emotional experience
+        \end{itemize}
+        \item \textbf{Narrative Structure} - essential features such as dimension of setting, characterization, plot, theme, fictional goal 
+    \end{enumerate}
+    \item \url{https://www.researchgate.net/publication/233077307_A_Narrative_Journey_for_Intimate_Partner_Violence_From_Victim_to_Survivor} stories of women escaping abusive relationships
+    \begin{enumerate} 
+        \item \textbf{Key Themes}
+        \begin{itemize}
+            \item Unique Outcomes: Moments of positive change where women felt empowered, often through external support or turning points, fostering a sense of agency.
+            \item Dominant Cultural Narratives: Cultural expectations that can limit women's self-agency, which therapists help clients challenge by articulating their personal values.
+            \item Support Networks: Emphasizes the role of support (social, practical, and spiritual) in helping women sustain their new, violence-free lives and reinforce empowerment.
+        \end{itemize} 
+        \item \textbf{Re-storying Lives:} Therapy focuses on re-storying, where clients identify positive, empowering moments to build a new narrative. This involves rejecting harmful cultural narratives and building agency.
+        \item \textbf{Cognitive Dissonance:} Acknowledges the cognitive conflict women face when leaving abusive relationships. Therapy addresses discrepancies between women’s values and behaviors to prevent a return to abusive partners.
+    \end{enumerate}
+
+    \item \url{https://pubmed.ncbi.nlm.nih.gov/11045775/}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{enumerate}
+
+    
+\textbf{Passive Voice: } \\
+\url{https://www.sciencedirect.com/science/article/pii/S0747563224001341?ref=pdf_download&fr=RR-2&rr=8da58967bad81351}
+
+
+\textbf{Other Theories to use:}
+\begin{itemize}
+    \item Resilience Theory: 
+    \item Rape culture: ""
+\end{itemize}
+
+\hl{Meeting with Dr. Singh 10/29}
+\begin{itemize}
+    \item You can add your own categories. Some are - 
+    \begin{itemize}
+        \item Why is a person bringing up past stories now, what is the trigger.
+        \item Types of advice?
+    \end{itemize}
+    \item Narrative Analysis could give some ideas on Resilience
+    \begin{itemize}
+        \item \url{https://parentandteen.com/language-of-resilience/}
+        \item \url{https://journals.sagepub.com/doi/10.1177/21649561211000306}
+        \item \url{https://journals.sagepub.com/doi/10.1177/21649561211000306}
+        \item \url{https://sudc.org/the-language-of-resilience/}
+        \item \url{https://link.springer.com/content/pdf/10.1007/s10896-023-00571-1.pdf}
+    \end{itemize}
+    \item Read Deborah Tannah's books - 
+    \begin{itemize}
+        \item \url{https://search.lib.ncsu.edu/?q=tannen%2C+deborah}
+        \item \url{https://catalog.lib.ncsu.edu/catalog/NCSU843827}
+        \item \url{https://ebookcentral.proquest.com/lib/ncsu/detail.action?docID=7035950}
+    \end{itemize}
+\end{itemize}
+
+\hl{Contextual Features Extracted:}
+
+\begin{enumerate}
+    \item About Victim and Perpetrator (to be evaluated by manual annotations)
+    \begin{enumerate}
+        \item Relation between Victim and Perpetrator: Choose one of the following - 
+        \begin{itemize}
+            \item Married Partner
+            \item Non-Marital Romantic Partner 
+            \item Ex-Married Partner
+            \item Ex Non-Marital Romantic Partner
+            \item Family Member - provide the specific relation
+            \item Friend or Acquaintance
+            \item Co-worker or Colleague 
+            \item Authority Figure - provide the specific relation
+            \item Stranger
+            \item Other - define the relationship and explain why it doesn't fit into the other categories.
+        \end{itemize}
+        \item Age and Gender of Victim, if mentioned, else``Not Mentioned"
+        \item Age and Gender of Perpetrator, if mentioned, else ``Not Mentioned"
+        \item POV of the Post: Choose one of the following options - 
+        \begin{itemize}
+            \item Victim
+            \item Perpetrator
+            \item Other - mention their connection with the victim, or the perpetrator, or both
+        \end{itemize}
+    \end{enumerate}
+    \item Narrative of the Author
+    \begin{enumerate}
+        \item Narrative Process: Choose one of the following options (to be evaluated by manual annotations)
+        \begin{itemize}
+            \item External Narrative Process
+            \item Internal Narrative Process
+            \item Reflective Narrative Process
+        \end{itemize}
+        \item Narrative Structure in the perspective of resilience (open-ended text generation, to be analyzed by topic modeling or clustering)
+        \begin{itemize}
+            \item Setting - ``where" and ``when"
+            \item Characterization - ``who"
+            \item Plot - ``what"
+            \item Theme - ``why"
+            \item Fictional Goal - underlying purpose or direction. It is called ``fictional" not because it's not true, but because it is created by the storyteller, often without realizing it, to make sense of their life or experiences.
+        \end{itemize}
+    \end{enumerate}
+    \item Intentions of the Author (open-ended text generation, to be analyzed by topic modeling or clustering)
+    \item Impact of violence on the Victim - Choose all options that apply from each of the following categories (to be evaluated by manual annotations)
+    \begin{enumerate}
+        \item Physical Health
+        \begin{itemize}
+            \item Undereating or overeating
+            \item Insomnia/disruptions in sleep
+            \item Physical injuries caused by the violence
+            \item Sexually transmitted infections
+            \item Gynecological and menstrual problems for female survivors
+            \item Chronic pain, headaches, or stomach aches
+            \item Bruises, fractures, or other visible injuries
+            \item Increased risk of heart disease and hypertension from prolonged stress
+        \end{itemize}
+        \item Emotional/Psychological Health
+        \begin{itemize}
+            \item Increased use of drugs and/or alcohol
+            \item Nightmares or flashbacks
+            \item Hypervigilance
+            \item Self-harming or reckless behaviors
+            \item Depression and/or anxiety
+            \item Feelings of numbness or detachment
+            \item Self-blame or guilt
+            \item Phobias
+            \item Low self-esteem
+            \item Thoughts of suicide or suicide attempts
+            \item Eating disorders
+            \item Feelings of shame or unworthiness
+            \item Fear of unpredictability and loss of trust in others
+        \end{itemize}
+        \item Social Lifestyle
+        \begin{itemize}
+            \item Isolation from friends and family
+            \item Staying at home or avoiding social situations
+            \item Dependency on or isolation by the abuser
+            \item Fear of engaging in new relationships
+            \item Difficulty trusting others
+            \item Avoidance of public places or certain environments
+            \item Disruption in work or school life due to instability
+            \item Reduced ability to engage in hobbies or activities outside the home
+        \end{itemize}
+        \item Sexual Health
+        \begin{itemize}
+            \item Discontinuing all sexual activity or becoming hypersexual
+            \item Disconnecting from one’s own sexuality
+            \item Distrust of sexual contact
+            \item Difficulty with intimacy in relationships
+            \item Fear of physical closeness
+            \item Anxiety related to sexual contact or triggers
+            \item Guilt or shame tied to sexual activity
+        \end{itemize}
+        \item Financial and Economic Stability
+        \begin{itemize}
+            \item Loss of employment due to absences or stress
+            \item Lack of control over personal finances
+            \item Debt or financial dependency on the abuser
+            \item Loss of savings from medical or legal expenses
+            \item Reduced ability to work due to physical or emotional impacts
+        \end{itemize}
+        \item Spiritual/Religious Practices
+        \begin{itemize}
+            \item Discontinuing spiritual or religious practices
+            \item  Questioning beliefs about justice, forgiveness, or suffering
+            \item  Seeking support from spiritual or religious communities
+            \item  Feeling unworthy or unsupported by one's faith community
+            \item  Turning to spiritual practices as a source of strength or resilience
+        \end{itemize}
+        \item Family Dynamics
+        \begin{itemize}
+            \item Strained relationships with children or family members
+            \item Coercion or manipulation affecting family decisions
+            \item Fear for the safety of children or other family members
+            \item Children witnessing or experiencing violence, leading to secondary trauma
+            \item Disruption in parenting due to mental health impacts
+        \end{itemize}
+        \item Legal/Safety Concerns
+        \begin{itemize}
+            \item Seeking restraining orders or legal protection
+            \item Fear of reporting due to potential retaliation
+            \item Concerns about the legal system's ability to protect
+            \item Moving residences to ensure personal safety
+            \item Hesitancy to reach out to law enforcement due to fear of escalation or mistrust
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+
+\textbf{Impact on Victim - References:}
+\begin{itemize}
+    \item \url{https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=aa297fa3fcf533b029fc984ad6c15b0d848f3e45}
+    \item \url{https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1467-842X.1998.tb01496.x}
+    \item 
+    
+\end{itemize}
+
+\hl{Meeting 7 Nov}
+
+\begin{itemize}
+    \item Looking at how many comments are helpful
+    \item How valid/accurate are these incidents?
+    \item We are assuming there is social supportt
+\end{itemize}
+
+\hl{Ideas for next projects?}
+
+\begin{enumerate}
+    \item Virtual Simulation to prevent Sexual Harassment
+    \begin{itemize}
+        \item VR: \url{https://dl.acm.org/doi/pdf/10.1145/3491102.3502129}
+        \item \url{https://www.sciencedirect.com/science/article/pii/S0022395620310670}
+        \item Meeting with Sherry: \url{https://www.csc2.ncsu.edu/faculty/mpsingh/papers/mas/ECAI-24-Exanna.pdf}
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

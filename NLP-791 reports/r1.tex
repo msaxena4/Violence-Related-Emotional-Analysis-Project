@@ -1,0 +1,111 @@
+\documentclass[conference,compsoc]{IEEEtran}
+
+% *** CITATION PACKAGES ***
+%
+\usepackage[numbers]{natbib}
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={blue!80!black}
+}
+\usepackage{footnotebackref}
+\usepackage{url}
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\newcommand{\seo}[1]{\textcolor{red}{SP:~~#1}}
+\newcommand{\ms}[1]{\textcolor{blue}{MS:~~#1}}
+
+\begin{document}
+
+\title{An Analysis of the Correlation Between Writing Styles and Emotional States}
+
+\author{
+\IEEEauthorblockN{Mansi Saxena}
+\IEEEauthorblockA{msaxena4@ncsu.edu}
+\and
+\IEEEauthorblockN{Seoyeong Park}
+\IEEEauthorblockA{spark43@ncsu.edu}}
+
+
+\maketitle
+
+% Main idea
+% Reddit data from each thread, like /sadness, etc
+% Clustering for each thread → important features for each emotion
+% MentalBERT, MentalRoberta
+% How will we build an HMM? 
+% Find relevant papers to this and to different writing styles
+% We need different writing styles to differentiate between mental states/ emotions
+% Evaluation of MentalRoberta and the HMM
+% Use the HMM to build the empathetic text suggestion model. 
+% Find more relevant papers
+
+
+\section{Problem Description}
+
+In today's digital age, online communities like Reddit play a significant role in providing emotional support and a sense of belonging to individuals dealing with various mental health issues, or other life struggles. It provides a free speech platform for users to openly express their experiences, emotions and opinions, and connect with like minded individuals. 
+
+In this project, we realise the potential of harnessing the valuable data generated within these posts and communities.  Our proposal revolves around the assumption that there exists a relationship between an individual's emotional state and their writing style on social media platforms, specifically on a conversational platform like Reddit. It aims to discover whether emotional shifts manifest as discernible changes in the style, such as tone, usage of vocabulary, content, or patterns of their online posts, under the assumption that emotional fluctuations and writing style changes have a connection in online communication. 
+
+is crucial in creating more effective mental health support systems. Such systems can provide users with empathetic responses and resources tailored to their emotional needs, ultimately contributing to a more empathetic and supportive online environment for those struggling with mental health issues.
+
+The primary challenge is to develop a comprehensive solution that not only analyses the rich textual data from these subreddits but also understands and categorises the diverse range of emotions and mental states expressed by users. To tackle this challenge, we aim to construct a probabilistic graphical models for structured prediction, such as a Conditional Random Field (CRF) \citep{Lafferty+01:CRF}, that capture transitions in sequential data (i.e., the writing style) and map it to transitions in emotional states. This approach challenges the notion that writing styles can be neatly categorised into a binary classification, instead suggesting that they may reflect nuanced emotional states, reflecting subtleties in linguistic expressions using probabilities. 
+
+Ultimately, we envision using this CRF to create empathetic AI suggestion models that can complement platforms like Reddit. These models aim to provide comforting and supportive responses to users grappling with mental health disorders within these online communities, with the ultimate goal of improving their well-being.
+
+\subsection{Example scenario}
+Imagine a user, Sarah, who frequently posts here thoughts on the Reddit platform. If post ``A" by Sarah uses words like ``wondering" and ``how", our model predicts a curious emotional state, while if post ``B" uses ''hate", her emotional state could be either ``annoyance" or ``anger". This analysis could help identify the emotional state of users, when is more positive or negative, analyse external reasons behind this emotional state transition, and  potentially offer them tailored support or resources.
+
+\section{Relevant Literature}
+Though there is related work on detecting mental health disorders from social media, none use probabilistic graphical models to map changes in writing styles to changes in emotional states to the best of our knowledge. \citet{Park+18:mental-health-reddit}'s work contrasts the character of online discourse within mental health communities, namely, ``Anxiety," ``Depression", and ``PTSD", discerns prevalent themes and underscores distinctions in participation and conversational approaches. We find their clustering approach and qualitative study relevant to our problem. 
+
+A Hidden Markov Model (HMM) is a probabilistic graphical model characterized by joint probabilities extending across observations and their corresponding labels. \citet{Ansari+18:dcr-hmm} presents a type of HMM that categorizes users as either depressed or not. They train the HMM on a dataset where users are presented with content, and their responses are recorded. Though this was published in 2018, we did not find other recent, relevant papers using HMM in mental model. We are in the process of obtaining the dataset and code for this paper. 
+
+Some previous research applies Conditional Random Fields (CRF) to process sequential languages \citep{Guo+20:opinion-holders, Zhang+Singh-19:attributed-oriented}. CRFs represent another category of probabilistic graphical models, featuring conditional probabilities concerning label sequences in the context of specific observation sequences. We also find their approach to find linguistic, contextual and interactive features from text relevant to our problem. 
+
+Ultimately, we aim to build an AI model to enhance empathy in online conversational platforms, as demonstrated by \citet{Sharma+23:human-ai-empathic-conversation}.
+
+\section{Problem importance}
+This problem is crucial as it addresses the well-being of individuals in online mental health communities, such as Reddit. Our application aims to provide empathetic AI support tailored to users' emotional states, reducing isolation and improving well-being. Its special feature is the analysis of writing style shifts to detect nuanced changes in emotional states. This solution streamlines the process of seeking emotional support, enabling automated, scalable mental health assistance. It can also aid in the early detection of mental health issues, destigmatizing discussions, and exploring mental health trends in online communities through data analysis of Reddit posts.
+
+\section{Method}
+We first collect data from Reddit communities\footnote{Potential source: \newline \url{https://convokit.cornell.edu/documentation/subreddit.html}} like r/anger, r/fear, r/sadness, etc. Each of these communities will be an emotional state in our final graphical model. We will refer to the work of \citet{Plutchik+Kellerman-13:emotion} to decide the list of emotional states to be included in our model. 
+
+We then cluster for posts from each of these communities, similar to \citet{Park+18:mental-health-reddit}, to get distinct and dominant writing styles for each community. We will analyse common words, hashtags, and relevant factors to predict unique writing styles for each mental state. We then employ pre-trained language models like MentalBERT and MentalRoBERTa \citep{Ji+21:MentalBERT} and fine-tune our dataset to predict a user's emotional state through their online Reddit post. We will use labels from the names of the communities. 
+
+Once we have a distinct writing style for each of the emotional states and a model to classify emotional states, we begin building the dataset for our CRF model. Our original dataset must contain a list of users (without sensitive personal information) and their multiple posts in a community over a time period. For each post, we get its writing style from our clustering model and the emotional state classification from our fine-tuned model. We use these results to create a new dataset of these Reddit posts with a temporal stamp, a clustered writing style and a classified emotion. This dataset is used to train the CRF model, which learns the transitions in writing styles over time and maps them to corresponding changes in emotional states. 
+
+We intend to use this CRF to build an AI model that assists users in enhancing empathy in their responses on Reddit. However, implementing this is outside the scope of this semester's project. 
+
+\section{Justification}
+Alternative methods for emotion detection include sentiment analysis, topic modelling, and the use of sequential models. Sentiment analysis classifies posts based on the emotions expressed in the text, providing a broad understanding of emotional content. However, it often lacks capturing subtle shifts. Topic modelling identifies topics within the text but may not capture subtle nuances in the context associated with mental states. Sequential models may offer better performance but may require substantial amounts of data and computing resources.
+
+Our approach introduces a novel application of CRF, a type of probabilistic graphical model, to link changes in writing style with emotional states. To the best of our knowledge, this approach has not been widely explored in the context of mental state prediction. We believe that CRF offer advantages in capturing subtle variations in writing style corresponding to different emotional states, potentially enhancing accuracy and reliability compared to existing methods.
+
+From the various existing probabilistic graphical models, including Bayesian Networks (directed) and Markov Networks (undirected), we have opted for CRF, which belong to the category of Markov Random Fields (undirected) specifically tailored for structured prediction tasks. CRF, as discriminative models that make use of label sequences, are a more suitable choice for our task compared to models like HMM. This choice allows us to relax the assumption of independence between states and better model longer-range dependencies.
+
+As demonstrated by \citet{Sharma+23:human-ai-empathic-conversation}, existing systems are currently being used to provide empathetic suggestions to human responses. However, these systems may not take the emotional state of a user into consideration, thus being incapable of adapting well to specific situations. Our approach goes beyond empathetic suggestion and aims to provide tailored mental health support, a critical and sensitive domain where empathy is paramount. By integrating CRF-derived insights into our AI model for empathy enhancement, our system gains a deeper understanding of users' emotional states, enabling it to offer more contextually relevant and effective responses.
+
+\section{Evaluation}
+We use metrics like F1 score, accuracy, and AUC-ROC for our CRF model to see how well the model works in capturing changes in writing styles over a time period and mapping it to changes in emotional states. We will also use these metrics to evaluate our BERT model and perform a comparative study with other pre-trained models like BERT. For our clustering model, we use a silhouette score. Additionally, we will  perform qualitative analysis to evaluate our obtained results. 
+
+\section{Future work}
+The next step would be implementing an AI-text generator that suggests a revision of user text to be more empathetic based on our CRF model and the results we find in this study. One interesting caveat of this study is understanding if one can make a response more empathetic without alternating the context of the statement. Another future directions is to computationally identifying the path of emotional states in the CRF that users had a tendency to take in the various subreddits.
+
+\bibliographystyle{IEEEtranN}
+\bibliography{Seoyeong}
+
+\end{document}
